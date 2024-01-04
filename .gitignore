@@ -1,0 +1,13 @@
+.DS_Store
+.idea
+*.ia
+*.log
+*.sublime
+*.zip
+dist/
+build/
+gulp/version.json
+node_modules/
+npm-debug.*
+Thumbs.db
+.vscode/

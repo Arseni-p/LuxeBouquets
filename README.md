@@ -1,2 +1,2 @@
 # LuxeBouquets
-Luxe Bouquets Delivery
+Luxe Bouquets Delivery Website

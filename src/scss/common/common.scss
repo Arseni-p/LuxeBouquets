@@ -1,10 +1,73 @@
 @import "./normalize.scss";
-// @import "./fonts.scss";
+@import "./fonts.scss";
 
-body {
-  // font-family: Arial, Helvetica, sans-serif;
-  // font-weight: 400;
-  // font-size: 16px;
+$black: #121212;
+$gray: #808080;
+$grayDark: #424245;
+$grayLight: #d2d2d7;
+$grayLightExtra: #f5f5f7;
+$white: #ffffff;
+$statusSuccess: #32936f;
+$statusError: #f55f56;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Gilroy, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: $black;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+h1, h2 {
+  font-weight: 600;
+}
+
+h3, h4, h5, h6,
+a,
+button {
+  font-weight: 400;
+}
+
+a,
+button {
+ font-size: 1;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+button {
+  text-transform: uppercase;
 }
 
 //laptop
@@ -19,11 +82,29 @@ body {
 
 //phone - tablet
 @media (max-width: 768px) {
-
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  h4 {
+    font-size: 1.25rem;
+  }
+  
+  h5 {
+    font-size: 1.1rem;
+  }
 }
 
 //phone
-@media (max-width: 480px) {
+@media (max-width: 525px) {
 
 }
 

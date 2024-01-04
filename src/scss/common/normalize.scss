@@ -14,13 +14,14 @@ img {
   border-style: none;
 }
 
+a,
 button,
 input,
 optgroup,
 select,
 textarea {
   font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
+  font-size: 1rem; /* 1 */
   line-height: 1; /* 1 */
   margin: 0; /* 2 */
   padding: 0;
@@ -86,10 +87,6 @@ button:focus,
 input:active,
 input:focus {
   outline: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
 }
 
 .visually-hidden {

@@ -14,6 +14,7 @@
   }
 
   &--right {
+    width: 50vw;
     border-left: $borderBlack;
   }
 }
@@ -27,7 +28,6 @@
 }
 
 .hero__title {
-  font-size: 4.65vw;
   margin-bottom: 1vw;
 
   & sup {
@@ -36,10 +36,11 @@
 }
 
 .hero__text {
-  font-size: 1.25vw;
+  font-size: 1.2vw;
   margin-bottom: 2vw;
 
   &--preview {
+    font-size: inherit;
     margin-bottom: 0;
   }
 }
@@ -82,6 +83,7 @@
 .hero__text--preview {
   padding-right: 1.1vw;
 }
+
 .hero-services__list,
 .hero-services__item,
 .hero-services__item--wrapper {
@@ -98,6 +100,7 @@
 
     & .hero-services__image--wrapper {
       border-left: $borderBlack;
+      border-right: $borderBlack;
     }
 
     & .link-arrow {
@@ -130,6 +133,7 @@
 
       & .hero-services__image--wrapper {
         border-left: none;
+        border-right: none;
       }
 
       .hero-services__link {

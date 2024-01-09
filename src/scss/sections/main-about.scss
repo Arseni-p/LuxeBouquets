@@ -1,0 +1,30 @@
+.about__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about__part {
+  padding: 5.55vw;
+
+  &--content {
+    width: 50vw;
+    border-left: $borderBlack;
+  }
+}
+
+.about__content {
+  
+  &--subtitle {
+  margin-bottom: 1.1vw;
+  text-transform: uppercase;
+}
+
+  &--title {
+    margin-bottom: 0.85vw;
+  }
+
+  &--text {
+    margin-bottom: 3.3vw;
+    line-height: 1.4;
+  }
+}

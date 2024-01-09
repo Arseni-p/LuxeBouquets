@@ -25,8 +25,9 @@ $borderBlack: 1px solid $black;
 
 html {
   font-family: Gilroy, Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 0.85vw;
+  letter-spacing: 0.03vw;
   line-height: 1.2;
   color: $black;
   scroll-behavior: smooth;
@@ -59,7 +60,8 @@ button {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 5.2rem;
+  letter-spacing: 0;
 }
 
 h2 {
@@ -82,8 +84,86 @@ h6 {
   font-size: 1rem;
 }
 
-button {
+button,
+.btn {
+  @include flex-center();
+  width: 12vw;
+  height: 4vw;
+  font-size: 1.12vw;
   text-transform: uppercase;
+  border: 1px dashed red;
+}
+
+.btn {
+  &__sec {
+    border: $borderBlack;
+    background-color: $white;
+    transition: background-color 0.3s linear;
+
+    &:hover {
+      background-color: $black;
+      transition: background-color 0.3s linear;
+
+      & .btn__text {
+        transition: top 0.2s ease-in-out;
+        &--active {
+          top: -100%;
+        }
+        &--hover {
+          top: 0;
+        }
+      }
+    }
+
+    &:active {
+      background-color: $white;
+      transition: background-color 0.3s linear;
+
+      & .btn__text {
+        transition: top 0.2s ease-in-out;
+        &--active {
+          top: 0;
+        }
+        &--hover {
+          top: 100%;
+        }
+      }
+    }
+  }
+
+  &__text {
+    @include flex-center();
+    width: 65%;
+    height: 1.15vw;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &--placeholder {
+      border: 1px dashed red;
+      color: transparent;
+      overflow: hidden;
+    }
+
+    &--active,
+    &--hover {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      transition: top 0.2s ease-in-out;
+    }
+
+    &--active {
+      top: 0;
+    }
+
+    &--hover {
+      top: 100%;
+      color: $white;
+    }
+    
+  }
+  
 }
 
 
@@ -93,6 +173,7 @@ button {
   border-left: $borderBlack;
   border-top: $borderBlack;
   border-right: $borderBlack;
+  // overflow: hidden;
   // border: $borderBlack;
   // border-bottom-color: transparent;
 }

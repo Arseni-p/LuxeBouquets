@@ -1,9 +1,9 @@
-.menu__wrapper {
-  background-color: pink;
+.header.section__wrapper {
+  border-right: none;
 }
 .menu__list {
   display: flex;
-  height: 12vh;
+  height: 5vw;
   // border-top: $borderBlack;
   // border-bottom: $borderBlack;
 
@@ -21,9 +21,9 @@
       border-left: $borderBlack;
     }
     
-    &:last-child {
-      border-right-color: transparent;
-    }
+    // &:last-child {
+    //   border-right: none;
+    // }
   }
 }
 

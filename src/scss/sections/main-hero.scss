@@ -7,15 +7,14 @@
   // width: 50vw;
 
   &--left {
-    position: sticky;
-    top: 0;
-    padding: 0 5.55vw 5.55vw;
+    padding-top: 0;
     height: fit-content;
   }
 
   &--right {
-    width: 50vw;
-    border-left: $borderBlack;
+    padding: 0;
+    // width: 50vw;
+    // border-left: $borderBlack;
   }
 }
 
@@ -24,7 +23,7 @@
   flex-direction: column;
   justify-content: flex-end;
   height: 25vw;
-  padding-top: 5.55vw;
+  padding-top: $sectionPadding;
 }
 
 .hero__title {

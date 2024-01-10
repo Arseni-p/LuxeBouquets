@@ -10,6 +10,8 @@ $white: #ffffff;
 $statusSuccess: #32936f;
 $statusError: #f55f56;
 $borderBlack: 1px solid $black;
+$sectionPadding: 5.55vw;
+$titleMarginBtm: 0.85vw;
 
 @mixin flex-center {
   display: flex;
@@ -31,6 +33,11 @@ html {
   line-height: 1.2;
   color: $black;
   scroll-behavior: smooth;
+  background-color: $white;
+}
+
+p {
+  line-height: 1.4;
 }
 
 body {
@@ -65,11 +72,11 @@ h1 {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 h4 {
@@ -91,59 +98,22 @@ button,
   height: 4vw;
   font-size: 1.12vw;
   text-transform: uppercase;
-  border: 1px dashed red;
+  border: none;
+  border-radius: 0;
 }
 
+//BTN
 .btn {
-  &__sec {
-    border: $borderBlack;
-    background-color: $white;
-    transition: background-color 0.3s linear;
-
-    &:hover {
-      background-color: $black;
-      transition: background-color 0.3s linear;
-
-      & .btn__text {
-        transition: top 0.2s ease-in-out;
-        &--active {
-          top: -100%;
-        }
-        &--hover {
-          top: 0;
-        }
-      }
-    }
-
-    &:active {
-      background-color: $white;
-      transition: background-color 0.3s linear;
-
-      & .btn__text {
-        transition: top 0.2s ease-in-out;
-        &--active {
-          top: 0;
-        }
-        &--hover {
-          top: 100%;
-        }
-      }
-    }
-  }
+  border: $borderBlack;
+  transition: background-color 0.3s linear;
 
   &__text {
     @include flex-center();
-    width: 65%;
+    width: 100%;
     height: 1.15vw;
     text-align: center;
     position: relative;
     overflow: hidden;
-
-    &--placeholder {
-      border: 1px dashed red;
-      color: transparent;
-      overflow: hidden;
-    }
 
     &--active,
     &--hover {
@@ -159,13 +129,75 @@ button,
 
     &--hover {
       top: 100%;
-      color: $white;
+    } 
+  }
+
+  &:hover {
+    transition: background-color 0.3s linear;
+
+    & .btn__text {
+      transition: top 0.2s ease-in-out;
+      &--active {
+        top: -100%;
+      }
+      &--hover {
+        top: 0;
+      }
+    }
+  }
+
+  &:active {
+    transition: background-color 0.3s linear;
+
+    & .btn__text {
+      transition: top 0.2s ease-in-out;
+      &--active {
+        top: 0;
+      }
+      &--hover {
+        top: 100%;
+      }
+    }
+  }
+
+  &__sec {
+    background-color: $white;
+
+    & .btn__text {
+      &--active {
+        color: $black;
+      }
+
+      &--hover {
+        color: $white
+      }
     }
     
-  }
-  
-}
+    &:hover {
+      background-color: $black;
+    }
 
+    &:active {
+      background-color: $white;
+    }
+  }
+
+  &__pri {
+    background-color: $black;
+
+    & .btn__text {
+      color: $white;
+    }
+
+    &:hover {
+      background-color: $grayDark;
+    }
+
+    &:active {
+      background-color: $black;
+    }
+  }
+}
 
 .section__wrapper {
   max-width: 100vw;
@@ -176,6 +208,26 @@ button,
   // overflow: hidden;
   // border: $borderBlack;
   // border-bottom-color: transparent;
+}
+
+.section__content {
+  display: flex;
+}
+
+.section__part {
+  padding: $sectionPadding;
+
+  &:last-child {
+    margin-left: auto;
+    width: 50vw;
+    border-left: $borderBlack;
+  }
+}
+
+.sticky__section {
+  position: sticky;
+  top: 0;
+  height: fit-content;
 }
 
 //laptop

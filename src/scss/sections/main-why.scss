@@ -1,0 +1,17 @@
+.why__part--right {
+  padding: 0;
+}
+
+.why__list {
+  display: flex;;
+  flex-direction: column;
+}
+
+.why__item {
+  padding: $sectionPadding;
+  border-bottom: $borderBlack;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

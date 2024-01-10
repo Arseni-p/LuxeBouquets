@@ -18,7 +18,7 @@ export const path = {
   },
   src: {
     js: `${srcFolder}/js/index.js`,
-    images: `${srcFolder}/images/*.{jpg,jpeg,png,gif,webp,ico}`,
+    images: `${srcFolder}/images/*.{jpg,jpeg,png,gif,webp,ico,svg}`,
     svg: `${srcFolder}/images/**/*.{svg}`,
     scss: `${srcFolder}/scss/style.scss`,
     html: `${srcFolder}/*.html`,

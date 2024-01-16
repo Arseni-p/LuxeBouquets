@@ -10,10 +10,7 @@
               <input id="tel-input" class="tel-input" type="text" placeholder="+38 XX XXX XX XX">
             </label>
             <button type="submit" class="btn btn__pri">
-              <span class="btn__text">
-                <span class="btn__text--active">Book a call</span>
-                <span class="btn__text--hover">Book a call</span>
-              </span>
+              @@include("./textBtn.html", {"textBtn": "Book a call"})
             </button>
           </form>
         </div>
@@ -76,8 +73,6 @@
           </li>
         </ul>
       </div>
-
-
     </div>
   </div>
 </section>

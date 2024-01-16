@@ -1,3 +1,8 @@
+.contacts__content {
+  display: grid;
+  grid-template-columns: 1fr 50vw;
+}
+
 .contacts__part {
   padding: 0;
   height: 50vw;
@@ -15,6 +20,12 @@
   height: 50vw;
 }
 
+.contacts__links--wrapper {
+  display: grid;
+  grid-template-columns: 25vw 1fr;
+  width: 100%;
+}
+
 .contacts__title {
   margin-bottom: $titleMarginBtm;
 }
@@ -29,17 +40,9 @@
 }
 
 .contacts__input-label {
+  width: auto;
   flex-grow: 0.9;
-
-  & input {
-    @include flex-center();
-    width: 100%;
-    height: 100%;
-    padding: 0.5vw;
-    border: 1px solid $grayLight;
-  }
 }
-
 
 .contacts__form--wrapper {
   padding: $sectionPadding $sectionPadding 0;
@@ -47,14 +50,13 @@
 }
 
 .contacts__links {
-  &--wrapper {
-    display: flex;
-  }
+  // &--wrapper {
+  //   display: flex;
+  // }
 
   &--content {
     display: flex;
     flex-direction: column;
-    width: 50%;
     height: 25vw;
 
     &:first-child {
@@ -107,8 +109,6 @@
   }
 }
 
-
-
 .contacts__part--content {
   position: relative;
   overflow: hidden;
@@ -116,54 +116,32 @@
   & .contacts__image {
     transition: transform 0.2s ease-in-out;
   }
-  
+
   &:hover .contacts__image {
     transform: scale(1.1);
     transition: transform 0.2s ease-in-out;
   }
 }
 
-.contacts__social {
+.contacts__wrapper .contacts__social {
   &--wrapper {
     position: absolute;
     bottom: 0;
     left: 0;
-    display: flex;
-    background-color: $white;
-    width: 100%;
-    height: 7vw;
+    display: flex;;
+    width: calc(100% + 1px);
   }
 
   &--title,
   &--list {
-    @include flex-center();
-    width: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
   }
 
-  &--title {
-    border-right: $borderBlack;
-  }
-
-  &--item {
-    width: 1.5vw;
-    height: 1.5vw;
-    margin-right: 1.5vw;
-    transition: transform 0.1s linear, opacity 0.2s linear;
-
-    &:last-child {
-      margin: 0
-    }
-
-    &:hover {
-      cursor: pointer;
-      opacity: 0.5;
-      transition: opacity 0.2s linear;
-    }
-
-    &:active {
-      transform: scale(0.8);
-      opacity: 1;
-      transition: transform 0.1s linear, opacity 0.2s linear;
-    }
+  &--list {
+    width: 25vw;
+    border-left: $borderBlack;
   }
 }
+

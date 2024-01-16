@@ -1,5 +1,10 @@
 .header.section__wrapper {
+  position: fixed;
+  width: 100%;
+  background-color: $white;
   border-right: none;
+  border-bottom: $borderBlack;
+  z-index: $headerZindex;
 }
 
 .menu__wrapper {
@@ -8,7 +13,7 @@
 
 .menu__list {
   display: flex;
-  height: 5vw;
+  height: $navHeight;
   // border-top: $borderBlack;
   // border-bottom: $borderBlack;
 

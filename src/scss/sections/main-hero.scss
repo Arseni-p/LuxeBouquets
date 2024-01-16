@@ -1,6 +1,7 @@
 .hero__content {
   display: flex;
   position: relative;
+  padding-top: $navHeight;
 }
 
 .hero__part {
@@ -67,7 +68,8 @@
 
 .hero__image--wrapper {
   position: relative;
-  height: 19vw;
+  width: 20vw;
+  height: 18vw;
   overflow: hidden;
   
   & .hero__image {

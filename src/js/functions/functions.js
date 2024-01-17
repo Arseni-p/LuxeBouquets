@@ -3,13 +3,21 @@
 const getReviewsVars = (reviewsListWrapper) => {
   const reviewsListContent = reviewsListWrapper.querySelector('.reviews__list--content');
   const reviewsList = reviewsListContent.querySelector('.reviews__list');
+  const reviewsItems = reviewsListWrapper.querySelectorAll('.reviews__item');
   const reviewsWidth = reviewsListContent.offsetWidth;
   const reviewsListWidth = reviewsList.offsetWidth;
+  const dropsList = reviewsListWrapper.querySelector('.reviews__dots--list');
+  const reviewsDots = reviewsListWrapper.querySelectorAll('.reviews__dots--item');
+  const activeDot = reviewsListWrapper.querySelector('.dots__active');
   let posX = reviewsList.offsetLeft;
   return {
     reviewsList: reviewsList,
+    reviewsItems: reviewsItems,
     reviewsWidth: reviewsWidth,
     reviewsListWidth: reviewsListWidth,
+    dropsList: dropsList,
+    reviewsDots: reviewsDots,
+    activeDot: activeDot,
     posX: posX,
   }
 }
@@ -17,9 +25,9 @@ const getReviewsVars = (reviewsListWrapper) => {
 export const getReviewsListWrapper = () => document.querySelector('.reviews__list--wrapper');
 
 export const createReviewsDrops = (reviewsListWrapper) => {
-  const dropsList = reviewsListWrapper.querySelector('.reviews__dots--list');
-  const reviewsCount = reviewsListWrapper.querySelectorAll('.reviews__item').length;
-  console.log(dropsList, reviewsCount);
+  const { dropsList, reviewsItems } = getReviewsVars(reviewsListWrapper)
+  // const dropsList = reviewsListWrapper.querySelector('.reviews__dots--list');
+  const reviewsCount = reviewsItems.length;
   for (let i = 0; i < reviewsCount; i++) {
     const dropsItem = document.createElement('li');
     dropsItem.className = 'reviews__dots--item';
@@ -28,73 +36,58 @@ export const createReviewsDrops = (reviewsListWrapper) => {
   }
 }
 
-const toggleActiveDot = (reviewsListWrapper) => {
-  const activeDot = reviewsListWrapper.querySelector('.dots__active');
+const toggleActiveDot = (reviewsListWrapper, count) => {
+  const { reviewsDots, activeDot } = getReviewsVars(reviewsListWrapper);
+  // const reviewsDots = reviewsListWrapper.querySelectorAll('.reviews__dots--item');
+  // const activeDot = reviewsListWrapper.querySelector('.dots__active');
   activeDot.classList.toggle('dots__active');
+  reviewsDots[count].classList.add('dots__active');
 }
 
-export const getReviewByDot = (reviewsListWrapper, event) => {
-  let { reviewsList, reviewsWidth, posX } = getReviewsVars(reviewsListWrapper);
-  let count = 0;
-  const reviewsDots = reviewsListWrapper.querySelectorAll('.reviews__dots--item');
+export const getReviewByDot = (reviewsListWrapper, event, count) => {
+  let { reviewsDots } = getReviewsVars(reviewsListWrapper);
   reviewsDots.forEach((element, index) => {
     event.target === element ? count = index : count
   });
-  toggleActiveDot(reviewsListWrapper);
-  posX = reviewsWidth * -count;
-
-  reviewsDots[count].classList.add('dots__active');
-  reviewsList.style.left = `${posX}px`;
+  
+  return count;
 }
 
-export const reviewsSlide = (reviewsListWrapper, arrowBtn) => {
-  let {
-    reviewsList, 
-    reviewsWidth, 
-    reviewsListWidth, 
-    posX
-  } = getReviewsVars(reviewsListWrapper);
+export const getReviewsCount = (reviewsListWrapper, event, count) => {
+  // let { reviewsList, reviewsWidth, reviewsDots, posX } = getReviewsVars(reviewsListWrapper);
+  const reviewsItems = reviewsListWrapper.querySelectorAll('.reviews__item');
+  if (event.target.classList.contains('arrow-right')) count++;
+  if (event.target.classList.contains('arrow-left')) count--;
+  if (event.target.classList.contains('reviews__dots--item')) count = getReviewByDot(reviewsListWrapper, event, count);
+  if (count >= reviewsItems.length) count = 0;
+  if (count < 0) count = reviewsItems.length - 1;
+  toggleActiveDot(reviewsListWrapper, count);
+  console.log(`count after = ${count}`)
 
-  // const reviewsItems = reviewsListWrapper.querySelectorAll('.reviews__item');
-
-  // count = count;
-  // const dropsList = reviewsListWrapper.querySelectorAll('.reviews__dots--item');
-  // const reviewsCount = reviewsListWrapper.querySelectorAll('.reviews__item').length;
-
-  const reviewsDots = reviewsListWrapper.querySelectorAll('.reviews__dots--item');
-  toggleActiveDot(reviewsListWrapper);
-
-  if (arrowBtn === 'arrowRight' && posX <= 0 ) {
-    posX = posX - reviewsWidth;
-  }
-  if (arrowBtn === 'arrowRight' && posX + reviewsListWidth < reviewsWidth) {
-    reviewsList.style.left = `${reviewsListWidth}px`;
-    posX = 0;
-  }
-  let posXIsNull = false;
-  posX !== 0 ? posXIsNull = false : posXIsNull = true;
-  if (arrowBtn === 'arrowLeft' && posX < 0) {
-    posX = posX + reviewsWidth;
-  }
-  if (arrowBtn === 'arrowLeft' && posX >= 0 && posXIsNull) {
-    reviewsList.style.left = `${0 - reviewsListWidth + reviewsWidth}px`;
-    posX = posX - reviewsListWidth + reviewsWidth;
-  }
-
-  reviewsList.style.left = `${posX}px`;
-  let count = Math.trunc(-posX / reviewsWidth) === -0 ? 0 : Math.trunc(-posX / reviewsWidth);
-  reviewsDots[count].classList.add('dots__active');
+  return count;
 }
 
-export const resizeWindow = (reviewsListWrapper) => {
-  let { reviewsList, posX } = getReviewsVars(reviewsListWrapper);
+export const reviewsSlide = (reviewsListWrapper, arrowBtn, count) => {
+  let { reviewsList, reviewsWidth, posX } = getReviewsVars(reviewsListWrapper);
+  
+  posX = count * reviewsWidth;
+  if (
+    event.target.classList.contains('arrow-left') || 
+    event.target.classList.contains('arrow-right') ||
+    event.target.classList.contains('dots__active')
+    ) posX *=-1;
+  reviewsList.style.left = `${posX}px`;
+  toggleActiveDot(reviewsListWrapper, count);
+}
+
+export const resizeWindow = (reviewsListWrapper, count) => {
+  let { reviewsList, reviewsDots, posX } = getReviewsVars(reviewsListWrapper);
   posX = 0;
   reviewsList.style.left = `${posX}px`;
+  toggleActiveDot(reviewsListWrapper, count);
 }
 
-export const getInfo = (reviewsListWrapper) => {
-  // const infoBtn = reviewsListWrapper.querySelector('.info__btn--disable');
+export const getInfo = () => {
   const infoPopup = document.querySelector('.info__wrapper');
-  infoPopup.classList.toggle('info__wrapper--disable')
-  console.log(infoPopup);
+  infoPopup.classList.toggle('info__wrapper--disable');
 }

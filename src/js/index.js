@@ -19,7 +19,13 @@ document.addEventListener('click', (event) => {
 let count = 0;
 reviewsListWrapper.addEventListener('click', (event) => {
   count = fn.getReviewsCount(reviewsListWrapper, event, count);
-  fn.reviewsSlide(reviewsListWrapper, event, count);
+  if (
+    event.target.classList.contains('arrow-right') ||
+    event.target.classList.contains('arrow-left') ||
+    event.target.classList.contains('reviews__dots--item')
+    ) {
+      fn.reviewsSlide(reviewsListWrapper, event, count);
+  }
 })
 
 window.addEventListener('resize', () => {

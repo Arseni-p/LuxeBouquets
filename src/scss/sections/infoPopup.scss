@@ -1,7 +1,7 @@
 .info__wrapper {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   bottom: 0;
   left: 0;
   @include flex-center();
@@ -21,18 +21,17 @@
 
 .info__content {
   width: 50vw;
-  min-height: 90%;
   padding: calc($sectionPadding / 2);
   background-color: $white;
 }
 
 .info__title {
   margin-bottom: 1.5px;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 .info__text {
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1.2;
 
   &--preview,

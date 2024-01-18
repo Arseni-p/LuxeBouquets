@@ -335,11 +335,13 @@ button,
     }
   }
 }
+// $sectionPadding: 2.5vw;
 
 //laptop
-@media (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
+  $sectionPadding: 2.5vw;
   .section__part {
-    padding: calc($sectionPadding / 2);
+    padding: $sectionPadding;
   }
 }
 
@@ -375,5 +377,3 @@ button,
 @media (max-width: 525px) {
 
 }
-
-

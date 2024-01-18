@@ -145,3 +145,11 @@
   }
 }
 
+
+@media screen and (max-width: 1280px) {
+  $sectionPadding: 2.5vw;
+
+  .contacts__form--wrapper {
+    padding: $sectionPadding $sectionPadding 0;
+  }
+}

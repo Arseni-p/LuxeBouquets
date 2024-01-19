@@ -339,10 +339,7 @@ button,
 
 //laptop
 @media screen and (max-width: 1280px) {
-  $sectionPadding: 2.5vw;
-  .section__part {
-    padding: $sectionPadding;
-  }
+  
 }
 
 //tablet
@@ -352,16 +349,22 @@ button,
 
 //phone - tablet
 @media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
   h1 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
   
   h2 {
     font-size: 2rem;
+    margin-bottom: 24px;
   }
   
   h3 {
     font-size: 1.5rem;
+    margin-bottom: 16px;
   }
   
   h4 {
@@ -370,6 +373,62 @@ button,
   
   h5 {
     font-size: 1.1rem;
+    margin-bottom: 24px;
+  }
+
+  input {
+    padding: 16px;
+  }
+
+  .section__part {
+    padding: 40px;
+  }
+
+  .section__text-near-btn {
+    margin-bottom: 50px;
+  }
+
+  button,
+  .btn {
+    width: 180px;
+    height: 56px;
+    font-size: 16px;
+  }
+
+  .btn__text {
+    height: 16px;
+  }
+
+  .section__content {
+    flex-wrap: wrap;
+  }
+
+  .section__part {
+    padding: 40px;
+  
+    &:last-child {
+      margin-left: 0;
+      width: 100%;
+      border-left: none;
+    }
+  }
+
+  .sticky__section {
+    position: static;
+    top: auto;
+  }
+
+  .contacts__social {
+    &--wrapper {
+      height: fit-content;
+      border: 1px dashed red;
+    }
+
+    &--item {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+    }
   }
 }
 

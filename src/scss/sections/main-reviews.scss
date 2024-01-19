@@ -129,9 +129,11 @@ $reviewsHeight: 14vw;
 }
 
 @media screen and (max-width: 1280px) {
-  $sectionPadding: 2.5vw;
-  
+
+}
+
+@media screen and (max-width: 1280px) {
   .reviews__content {
-    padding: $sectionPadding;
+    padding: 40px;
   }
 }

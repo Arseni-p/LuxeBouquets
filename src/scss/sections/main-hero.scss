@@ -209,9 +209,15 @@ $paddingForHeroPreviewSection: 1.1vw;
 }
 
 @media screen and (max-width: 1280px) {
-  $sectionPadding: 2.5vw;
+  // $sectionPadding: 2.5vw;
 
+  // .hero__preview {
+  //   grid-template-columns: calc(25vw - $sectionPadding) 1fr;
+  // }
+}
+
+@media screen and (max-width: 768px) {
   .hero__preview {
-    grid-template-columns: calc(25vw - $sectionPadding) 1fr;
+    grid-template-columns: calc(25vw - 40px) 1fr;
   }
 }

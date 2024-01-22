@@ -85,8 +85,6 @@ $reviewsHeight: 14vw;
   }
 }
 
-
-
 .reviews__dots {
   &--wrapper {
     margin-bottom: 4vw;
@@ -133,7 +131,41 @@ $reviewsHeight: 14vw;
 }
 
 @media screen and (max-width: 1280px) {
+
   .reviews__content {
     padding: 40px;
+  }
+
+  .reviews__source--image {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+
+  .reviews__title {
+    margin-bottom: 24px;
+  }
+  
+  .reviews__list--content {
+    height: 150px;
+  }
+
+  .reviews__item {
+    padding: 8px;
+  }
+
+  .reviews__text {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .reviews__btn-arrow {
+    top: 50px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .reviews__dots--item {
+    width: 6px;
+    height: 6px;
   }
 }

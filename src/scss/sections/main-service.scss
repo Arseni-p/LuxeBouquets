@@ -18,6 +18,10 @@
   }
 }
 
+.service__section--title {
+  text-transform: uppercase;
+}
+
 .service__image--wrapper {
   background: url('../images/subscriptions.png') no-repeat center center;
   background-size: cover;
@@ -56,9 +60,49 @@
 }
 
 @media screen and (max-width: 768px) {
-  .why__item,
   .service__title,
   .service__wedding--content {
     padding: 40px;
+    margin: 0;
+  }
+
+  .service__subscriptions--wrapper {
+    flex-direction: column;
+    height: auto;
+    border-bottom: $borderBlack;
+  }
+
+  .service__image--wrapper,
+  .service__wedding--wrapper {
+    width: 100%;
+  }
+
+  .service__image--wrapper {
+    height: 500px;
+    background-position: left top;
+  }
+
+  .service__section--title {
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  .service__part--content {
+    text-align: center;
+
+    & .btn {
+      margin: 0 auto;
+      height: 56px;
+    }
+  }
+
+  .service__wedding--wrapper {
+    height: 400px;
+  }
+
+  .service__wedding--content {
+    & .service__text {
+      width: 90%;
+    }
   }
 }

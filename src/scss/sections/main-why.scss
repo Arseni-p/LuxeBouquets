@@ -23,6 +23,15 @@
 }
 
 @media screen and (max-width: 768px) {
+
+  .why__part--left {
+    border-bottom: $borderBlack;
+  }
+
+  .why__title {
+    margin-bottom: 0;
+  }
+
   .why__item {
     padding: 40px;
   }

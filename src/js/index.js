@@ -10,10 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('click', (event) => {
   const btn = event.target.closest('.btn');
+  const menuBtn = event.target.closest('.mobile-menu__open');
   if (
     btn && btn.classList.contains('popup__enable') || 
     event.target.classList.contains('info__wrapper') ||
     btn && btn.classList.contains('info__btn--disable')) fn.getInfo(reviewsListWrapper);
+
+    if (menuBtn) fn.getMobileMenu();
 })
 
 let count = 0;

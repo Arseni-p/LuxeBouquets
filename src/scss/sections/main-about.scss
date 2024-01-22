@@ -4,3 +4,13 @@
     // border-left: $borderBlack;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .about__part--title {
+    border-bottom: $borderBlack;
+  }
+
+  .about__title {
+    margin-bottom: 0;
+  }
+}

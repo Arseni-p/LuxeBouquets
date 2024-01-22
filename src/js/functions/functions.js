@@ -84,3 +84,11 @@ export const getInfo = () => {
   const infoPopup = document.querySelector('.info__wrapper');
   infoPopup.classList.toggle('info__wrapper--disable');
 }
+
+export const getMobileMenu = () => {
+  
+  const mobileMenu = document.querySelector('.mobile-menu__list');
+  // console.log(menuBtn);
+  mobileMenu.classList.toggle('opened');
+  // mobileMenu.classList.contains('opened') ? mobileMenu.style.height = '500px' : mobileMenu.style.height = '0px';
+}

@@ -354,11 +354,11 @@ button,
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: 3.3rem;
   }
   
   h2 {
-    font-size: 3rem;
+    font-size: 2.9rem;
     margin-bottom: 24px;
   }
   
@@ -380,10 +380,6 @@ button,
     padding: 16px;
   }
 
-  .section__part {
-    padding: 40px;
-  }
-
   .section__text-near-btn {
     margin-bottom: 50px;
   }
@@ -392,11 +388,11 @@ button,
   .btn {
     width: 180px;
     height: 56px;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .btn__text {
-    height: 16px;
+    height: 1rem;
   }
 
   .section__content {
@@ -433,5 +429,49 @@ button,
 
 //phone
 @media (max-width: 525px) {
+  html {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
   
+  h2 {
+    font-size: 2.4rem;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+  }
+  
+  h4 {
+    font-size: 1rem;
+  }
+  
+  h5 {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  input {
+    padding: 8px;
+  }
+
+  .section__part {
+    padding: 24px 16px;
+  }
+
+  .section__text-near-btn {
+    margin-bottom: 25px;
+  }
+
+  button,
+  .btn {
+    width: 100%;
+  }
+
+  .section__part {
+    padding: 24px 16px;
+  }
 }

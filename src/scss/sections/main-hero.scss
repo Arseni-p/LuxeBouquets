@@ -219,13 +219,16 @@ $paddingForHeroPreviewSection: 1.1vw;
 }
 
 @media screen and (max-width: 768px) {
+  .hero__content {
+    padding-top: 0;
+  }
   .hero__preview {
     grid-template-columns: 1fr 1fr;
   }
 
   .hero__title--wrapper {
     height: auto;
-    padding-top: 80px;
+    padding-top: 120px;
   }
 
   .hero__title {
@@ -234,10 +237,6 @@ $paddingForHeroPreviewSection: 1.1vw;
 
   .hero__text {
     font-size: inherit;
-    
-    & br {
-      display: none;
-    }
   }
 
   .hero__preview {
@@ -259,6 +258,11 @@ $paddingForHeroPreviewSection: 1.1vw;
     & .hero-services__item {
       width: 100%;
       height: 50vw;
+
+      & .hero-services__title--wrapper {
+        padding: 16px;
+        text-align: center;
+      }
 
       & .hero-services__image--wrapper {
         border-right: none;
@@ -282,6 +286,36 @@ $paddingForHeroPreviewSection: 1.1vw;
       &:last-child .hero-services__image {
         width: 100%;
         height: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .hero__title--wrapper {
+    padding-top: 80px;
+  }
+
+  .hero__image--wrapper {
+    height: 100%;
+
+    & .hero__image {
+      bottom: -30px;
+    }
+  }
+
+  .hero__text--preview {
+    font-size: 0.8rem;
+  }
+
+  .hero-services__list {
+    & .hero-services__item {
+      & .hero-services__title {
+        font-size: 1.8rem;
+      }
+
+      & .link-arrow svg {
+        width: 18px;
       }
     }
   }

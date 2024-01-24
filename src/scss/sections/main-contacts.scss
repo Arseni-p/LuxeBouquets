@@ -49,19 +49,13 @@
   border-bottom: $borderBlack;
 }
 
-.contacts__links {
-  // &--wrapper {
-  //   display: flex;
-  // }
+.contacts__links--content {
+  display: flex;
+  flex-direction: column;
+  height: 25vw;
 
-  &--content {
-    display: flex;
-    flex-direction: column;
-    height: 25vw;
-
-    &:first-child {
-      border-right: $borderBlack;
-    }
+  &:first-child {
+    border-right: $borderBlack;
   }
 }
 
@@ -80,7 +74,6 @@
 .contacts__link--content {
   padding-left: 1.5vw;
   font-size: 1.3rem;
-  // background-size: 20px 10px;
 
   &.tel {
     background: url('../images/icon-tel.svg') no-repeat left center;
@@ -251,6 +244,86 @@
     &.tel, 
     &.geo {
       background-size: contain;
+    }
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .contacts__part--content {
+    height: fit-content;
+  }
+
+  .contacts__social--wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .contacts__wrapper .contacts__social {
+    &--wrapper {
+      left: -1px;
+    }
+    
+    &--title,
+    &--list {
+      width: 100%;
+      padding: 8px;
+    }
+
+    &--title {
+      justify-content: flex-start;
+      padding-bottom: 0;
+      padding-left: 14px;
+    }
+    
+    &--list {
+      padding-top: 4px;
+    }
+  }
+
+  .contacts__form--wrapper {
+    padding: 24px 16px;
+  }
+
+  .contacts__form {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .contacts__title {
+    margin-bottom: 16px;
+  }
+
+  .contacts__text {
+    margin-bottom: 8px;
+  }
+
+  .contacts__links--wrapper {
+    grid-template-columns: 1fr;
+
+    & .contacts__links--content:first-child {
+      padding: 0;
+      border-right: none;
+      border-bottom: $borderBlack;
+    }
+  }
+
+  h3.contacts__link--title,
+  .contacts__link--title {
+    margin: 0;
+  }
+
+  .contacts__link--wrapper {
+    height: auto;
+    padding: 40px 16px;
+  }
+
+
+  .contacts__link--content {
+    padding-left: 24px;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin: 0;
     }
   }
 }

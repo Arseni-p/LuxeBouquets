@@ -80,6 +80,7 @@
   .service__image--wrapper {
     height: 500px;
     background-position: left top;
+    border-bottom: $borderBlack;
   }
 
   .service__section--title {
@@ -104,5 +105,24 @@
     & .service__text {
       width: 90%;
     }
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .service__title {
+    padding: 24px 16px;
+  }
+
+  .service__wedding--content {
+    padding: 16px;
+  }
+
+  .service__image--wrapper,
+  .service__wedding--wrapper {
+    height: 350px;
+  }
+
+  .service__section--title {
+    margin-bottom: 16px;
   }
 }

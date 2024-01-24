@@ -26,22 +26,20 @@ $reviewsHeight: 14vw;
 .reviews__list--content {
   position: relative;
   width: $reviewsListWidth;
-  height: $reviewsHeight;
+  height: fit-content;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .reviews__list {
-  position: absolute;
-  left: 0;
-  top: 0;
   display: flex;
   height: 100%;
+  transform: translateX(0px);
   transition: left 0.1s ease-in-out;
 }
 
 .reviews__item {
-  width: $reviewsListWidth;
+  flex: 0 0 $reviewsListWidth;
   padding: 0.5vw;
 }
 
@@ -131,7 +129,7 @@ $reviewsHeight: 14vw;
 }
 
 @media screen and (max-width: 1280px) {
-
+  $reviewsListWidth : 75vw;
   .reviews__content {
     padding: 40px;
   }
@@ -146,22 +144,95 @@ $reviewsHeight: 14vw;
   }
   
   .reviews__list--content {
-    height: 150px;
+    width: $reviewsListWidth;
   }
 
   .reviews__item {
+    flex: 0 0 $reviewsListWidth;
     padding: 8px;
   }
 
   .reviews__text {
     font-size: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   .reviews__btn-arrow {
     top: 50px;
     width: 24px;
     height: 24px;
+  }
+
+  .reviews__dots--item {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .reviews__content {
+    padding: 40px;
+  }
+
+  .reviews__source--image {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+
+  .reviews__title {
+    margin-bottom: 26px;
+  }
+  
+  .reviews__list--content {
+    width: $reviewsListWidth;
+  }
+
+  .reviews__item {
+    flex: 0 0 $reviewsListWidth;
+    padding: 8px;
+  }
+
+  .reviews__text {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .reviews__btn-arrow {
+    top: 50px;
+    width: 24px;
+    height: 24px;
+
+    &.arrow-left {
+      left: -10px;
+    }
+
+    &.arrow-right {
+      right: -10px;
+    }
+  }
+
+  .reviews__dots--item {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .reviews__content {
+    padding: 24px 16px;
+  }
+
+  .reviews__source--image {
+    width: 60px;
+  }
+
+  .reviews__title {
+    margin-bottom: 16px;
+  }
+
+  .reviews__text {
+    font-size: 12px;
+    margin-bottom: 8px;
   }
 
   .reviews__dots--item {

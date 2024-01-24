@@ -133,6 +133,38 @@
 
   .mobile-menu__open {
     border-right: $borderBlack;
+    position: relative;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: calc(50% - 1px);
+      left: calc(50% - 13px);
+      width: 24px;
+      height: 2px;
+      background-color: $black;
+      transform: rotate(0);
+      transition: box-shadow 0.3s linear 0.5s, transform 0.5s ease-in-out;
+    }
+
+    &::after {
+      box-shadow: 0 -6px 0 0 $black, 0 6px 0 0 $black;
+    }
+
+    &.close-btn::after{
+      box-shadow: 0 0 0 0 $black, 0 0 0 0 $black;
+    }
+
+    &.close-btn::after{
+      transform: rotate(-405deg);
+      transition: box-shadow 0.3s linear, transform 0.5s ease-in-out 0.3s;
+    }
+
+    &.close-btn::before{
+      transform: rotate(-135deg);
+      transition: box-shadow 0.3s linear, transform 0.5s ease-in-out 0.3s;
+    }
   }
   
   .mobile-menu__shop {
@@ -153,16 +185,11 @@
       height: auto;
       border-right: $borderBlack;
       background-color: $white;
-      // overflow: hidden;
-      transition: top 0.2s ease-in-out;
-
-      // transition: height 0.2s ease-in-out;
+      transition: top 0.8s ease-in-out;
 
       &.opened {
         top: 53px;
-        transition: top 0.2s ease-in-out;
-        // height: 500px;
-        // transition: height 0.2s ease-in-out;
+        transition: top 0.8s ease-in-out;
       }
     }
 

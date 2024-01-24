@@ -131,3 +131,36 @@
     margin-bottom: 8px;
   }
 }
+
+@media screen and (max-width: 525px) {
+  .footer__list {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .footer__item {
+    padding: 24px 16px;
+  }
+
+  .footer__text,
+  .footer__item--section {
+    margin-bottom: 24px;
+  }
+
+  .footer__title {
+    margin-bottom: 16px;
+  }
+
+  .remind__input-label {
+    height: 56px;
+
+    & input {
+      height: 100%;
+    }
+  }
+
+  .remind__input-label,
+  .footer__subitem {
+    margin-bottom: 8px;
+  }
+}

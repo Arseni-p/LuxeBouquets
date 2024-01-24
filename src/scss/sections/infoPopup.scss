@@ -11,7 +11,8 @@
   background-color: rgba(18, 18, 18, .6);
   backdrop-filter: blur(5px);
   transition: height 0.3s ease-in-out;
-  overflow: hidden;
+  // overflow: hidden;
+  overflow-y: scroll;
 
   &--disable {
     height: 0;
@@ -53,3 +54,45 @@
 .info__btn {
   width: 40%;
 }
+
+@media screen and (max-width: 768px) {
+  .info__content {
+    width: 85vw;
+    padding: 10px;
+  }
+  
+  .info__title {
+    margin-bottom: 8px;
+    font-size: 3rem;
+  }
+  
+  .info__text {
+    font-size: 0.85rem;
+    line-height: 1.1;
+  
+    &--preview,
+    &--subtitle {
+      margin-bottom: 4px;
+    }
+  }
+  
+  .info__list {
+    margin-bottom: 16px;
+    list-style-type: disc;
+    padding-left: 16px;
+  }
+  
+  .info__item {
+    margin-bottom: 4px;
+  }
+  
+  .info__btn {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .info__btn {
+    width: 100%;
+  }
+} 

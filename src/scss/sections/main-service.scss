@@ -1,0 +1,128 @@
+.service__content {
+  flex-direction: column;
+}
+
+.service__title {
+  @include flex-center();
+  border-bottom: $borderBlack;
+  padding: $sectionPadding;
+}
+
+.service__subscriptions--wrapper {
+  display: flex;
+  height: 40vw;
+  border-bottom: $borderBlack;
+
+  & .section__part:first-child {
+    padding: 0;
+  }
+}
+
+.service__section--title {
+  text-transform: uppercase;
+}
+
+.service__image--wrapper {
+  background: url('../images/subscriptions.png') no-repeat center center;
+  background-size: cover;
+}
+
+.service__wedding {
+  &--wrapper {
+    height: 50vw;
+    border-bottom: $borderBlack;
+    background: url('../images/wedding.png') no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: $sectionPadding;
+    background-color: rgba($color: $black, $alpha: 0.4);
+    color: $white;
+
+    & .service__text {
+      width: 40%;
+      text-align: center;
+    }
+  }
+}
+
+//laptop 1280
+@media screen and (max-width: 1280px) {
+  
+}
+
+@media screen and (max-width: 768px) {
+  .service__title,
+  .service__wedding--content {
+    padding: 40px;
+    margin: 0;
+  }
+
+  .service__subscriptions--wrapper {
+    flex-direction: column;
+    height: auto;
+    border-bottom: $borderBlack;
+  }
+
+  .service__image--wrapper,
+  .service__wedding--wrapper {
+    width: 100%;
+  }
+
+  .service__image--wrapper {
+    height: 500px;
+    background-position: left top;
+    border-bottom: $borderBlack;
+  }
+
+  .service__section--title {
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  .service__part--content {
+    text-align: center;
+
+    & .btn {
+      margin: 0 auto;
+      height: 56px;
+    }
+  }
+
+  .service__wedding--wrapper {
+    height: 400px;
+  }
+
+  .service__wedding--content {
+    & .service__text {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .service__title {
+    padding: 24px 16px;
+  }
+
+  .service__wedding--content {
+    padding: 16px;
+  }
+
+  .service__image--wrapper,
+  .service__wedding--wrapper {
+    height: 350px;
+  }
+
+  .service__section--title {
+    margin-bottom: 16px;
+  }
+}

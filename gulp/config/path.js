@@ -11,18 +11,18 @@ export const path = {
     images: `${buildFolder}/images/`,
     css: `${buildFolder}/css/`,
     html: `${buildFolder}`,
-    files: `${buildFolder}/files/`,
+    pages: `${buildFolder}/pages/`,
     fonts: `${buildFolder}/fonts/`,
     images: `${buildFolder}/images/`,
     buildFolder: buildFolder
   },
   src: {
     js: `${srcFolder}/js/index.js`,
-    images: `${srcFolder}/images/*.{jpg,jpeg,png,gif,webp,ico}`,
+    images: `${srcFolder}/images/*.{jpg,jpeg,png,gif,webp,ico,svg}`,
     svg: `${srcFolder}/images/**/*.{svg}`,
     scss: `${srcFolder}/scss/style.scss`,
     html: `${srcFolder}/*.html`,
-    files: `${srcFolder}/files/**/*.*`,
+    pages: `${srcFolder}/pages/**/*.*`,
     svgicons: `${srcFolder}/svgicons/*.svg`,
     svgImages: `${srcFolder}/images`
   },
@@ -31,7 +31,7 @@ export const path = {
     images: `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,webp,ico,svg}`,
     scss: `${srcFolder}/scss/**/*.scss`,
     html: `${srcFolder}/**/*.html`,
-    files: `${srcFolder}/files/**/*.*`
+    pages: `${srcFolder}/pages/**/*.*`
   },
   clean: buildFolder,
   rootFolder: rootFolder,

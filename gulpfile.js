@@ -28,7 +28,7 @@ global.app = {
 }
 
 function watcher() {
-  gulp.watch(path.watch.files, copy);
+  gulp.watch(path.watch.pages, copy);
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.scss, scss);
   gulp.watch(path.watch.js, js);

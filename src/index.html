@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>LuxeBouquetes</title>
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-  @@include('html/header.html', {})
-    <main>
-      <h1 class="page-title visually-hidden">Page Title</h1>
-      <!-- @@include('./html/preview.html', {}) -->
-    </main>
-    @@include('html/footer.html',{})
+  @@include('html/header.html', {"textLink": "Shop"})
+  <main>
+    <h1 class="page-title visually-hidden">Page Title</h1>
+    @@include('./html/main-hero.html', {})
+    @@include('./html/main-about.html', {})
+    @@include('./html/main-why.html', {})
+    @@include('./html/main-contacts.html', {})
+    @@include('./html/main-service.html', {})
+    @@include('./html/main-reviews.html', {})
+  </main>
+  @@include('html/footer.html',{})
+  @@include('./html/infoPopup.html', {})
   <script src="js/index.min.js"></script>
 </body>
 <body>

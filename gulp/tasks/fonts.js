@@ -9,7 +9,7 @@ const fontFamily = (fontName, fontFileName, fontWeight) => {
 @font-face {
   font-family: ${fontName};
   font-display: swap;
-  src: url("../fonts/${fontFileName}.woff2") format("woff2"), url("../fonts/${fontFileName}.woff") format("woff");
+  src: url("../fonts/${fontFileName}.woff") format("woff");
   font-weight: ${fontWeight};
   font-style: ${fontStyle};
 }\r\n`
@@ -50,7 +50,7 @@ export const fontsStyle = () => {
             let fontWeight = fontFileName.split('-')[1] ? fontFileName.split('-')[1] : fontFileName;
             if (fontWeight.toLowerCase() === 'thin' || fontWeight.toLowerCase() === 'thinitalic') {
               fontWeight = 100;
-            } else if (fontWeight.toLowerCase() === 'extralight' || fontWeight.toLowerCase() === 'extralightitalic') {
+            } else if (fontWeight.toLowerCase() === 'ultralight' || fontWeight.toLowerCase() === 'ultralightitalic') {
               fontWeight = 200;
             } else if (fontWeight.toLowerCase() === 'light' || fontWeight.toLowerCase() === 'lightitalic') {
               fontWeight = 300;
@@ -60,9 +60,9 @@ export const fontsStyle = () => {
               fontWeight = 600;
             } else if (fontWeight.toLowerCase() === 'bold' || fontWeight.toLowerCase() === 'bolditalic') {
               fontWeight = 700;
-            } else if (fontWeight.toLowerCase() === 'extrabold' || fontWeight.toLowerCase() === 'heavy' || fontWeight.toLowerCase() === 'extrabolditalic' || fontWeight.toLowerCase() === 'heaveitalic') {
-              fontWeight = 800;
             } else if (fontWeight.toLowerCase() === 'black' || fontWeight.toLowerCase() === 'blackitalic') {
+              fontWeight = 800;
+            } else if (fontWeight.toLowerCase() === 'extrabold' || fontWeight.toLowerCase() === 'heavy' || fontWeight.toLowerCase() === 'extrabolditalic' || fontWeight.toLowerCase() === 'heavyitalic') {
               fontWeight = 900;
             } else {
               fontWeight = 400;

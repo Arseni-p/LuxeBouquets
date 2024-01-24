@@ -1,0 +1,166 @@
+.footer.section__wrapper {
+  border: none;
+  border-left: $borderBlack;
+  border-bottom: $borderBlack;
+  width: 100%;
+
+  & h5 {
+    text-transform: capitalize;
+  }
+
+  & h5,
+  & h6 {
+    color: $gray;
+  }
+
+  & h6 {
+    font-weight: 400;
+  }
+
+  & a {
+    justify-content: flex-start;
+  }
+}
+
+.footer__list--wrapper {
+  width: 100%;
+}
+
+.footer__list {
+  display: grid;
+  grid-template-columns: 25vw 1fr 1fr 25vw;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  width: 100%;
+}
+
+.footer__item {
+  padding: calc($sectionPadding / 2);
+  // flex-grow: 1;
+  border-right: $borderBlack;
+
+  &:first-child,
+  &:last-child {
+    // width: 25vw;
+    // flex-grow: unset;
+  }
+
+  &:nth-last-child(2) {
+    border-right: none;
+  }
+
+  &:last-child {
+    border-left: $borderBlack;
+  }
+}
+
+.footer__text {
+  margin-bottom: 1vw;
+}
+
+.remind__input-label,
+.footer__subitem {
+  margin-bottom: 0.5vw;
+}
+
+.remind__form--wrapper .btn {
+  width: 100%;
+}
+
+.footer__item--section {
+  margin-bottom: 1.5vw;
+}
+
+@media (max-width: 768px) {
+  .footer.section__wrapper {
+    border-bottom: none;
+  }
+
+  .footer__list {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50vw 50vw;
+  }
+
+  .footer__item {
+    padding: 40px;
+    border: none;
+    border-right: $borderBlack;
+    border-bottom: $borderBlack;
+
+    &:nth-last-child(2) {
+      border-right: $borderBlack;
+    }
+  
+    &:last-child {
+      border-left: none;
+    }
+
+    & .contacts__social--wrapper {
+      border: none;
+
+      & .contacts__social--title {
+        margin-bottom: 8px;
+      }
+
+      & .contacts__social--list {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .footer__text,
+  .footer__item--section {
+    margin-bottom: 24px;
+  }
+
+  .footer__title {
+    margin-bottom: 16px;
+  }
+
+  .remind__input-label {
+    height: 56px;
+
+    & input {
+      height: 100%;
+    }
+  }
+
+  .remind__input-label,
+  .footer__subitem {
+    margin-bottom: 8px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .footer__list {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .footer__item {
+    padding: 24px 16px;
+  }
+
+  .footer__text,
+  .footer__item--section {
+    margin-bottom: 24px;
+  }
+
+  .footer__title {
+    margin-bottom: 16px;
+  }
+
+  .remind__input-label {
+    height: 56px;
+
+    & input {
+      height: 100%;
+    }
+  }
+
+  .remind__input-label,
+  .footer__subitem {
+    margin-bottom: 8px;
+  }
+}

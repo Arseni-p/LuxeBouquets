@@ -16,7 +16,7 @@ document.addEventListener('click', (event) => {
     event.target.classList.contains('info__wrapper') ||
     btn && btn.classList.contains('info__btn--disable')) fn.getInfo(reviewsListWrapper);
 
-    if (menuBtn) fn.getMobileMenu();
+    if (menuBtn) fn.getMobileMenu(menuBtn);
 })
 
 let count = 0;

@@ -69,14 +69,14 @@ export const reviewsSlide = (reviewsListWrapper, event, count) => {
     event.target.classList.contains('arrow-right') ||
     event.target.classList.contains('dots__active')
     ) posX *=-1;
-  reviewsList.style.left = `${posX}px`;
+  reviewsList.style.transform = `translateX(${posX}px)`;
   toggleActiveDot(reviewsListWrapper, count);
 }
 
 export const resizeWindow = (reviewsListWrapper, count) => {
   let { reviewsList, posX } = getReviewsVars(reviewsListWrapper);
   posX = 0;
-  reviewsList.style.left = `${posX}px`;
+  reviewsList.style.transform = `translateX(${posX}px)`;
   toggleActiveDot(reviewsListWrapper, count);
 }
 
@@ -85,10 +85,11 @@ export const getInfo = () => {
   infoPopup.classList.toggle('info__wrapper--disable');
 }
 
-export const getMobileMenu = () => {
+export const getMobileMenu = (menuBtn) => {
   
   const mobileMenu = document.querySelector('.mobile-menu__list');
   // console.log(menuBtn);
   mobileMenu.classList.toggle('opened');
+  menuBtn.classList.toggle('close-btn');
   // mobileMenu.classList.contains('opened') ? mobileMenu.style.height = '500px' : mobileMenu.style.height = '0px';
 }

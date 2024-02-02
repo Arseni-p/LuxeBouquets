@@ -1,5 +1,7 @@
 'use strict';
 
+import {shopProducts} from "../modules/modules.js"
+
 const getReviewsVars = (reviewsListWrapper) => {
   const reviewsListContent = reviewsListWrapper.querySelector('.reviews__list--content');
   const reviewsList = reviewsListContent.querySelector('.reviews__list');
@@ -92,4 +94,57 @@ export const getMobileMenu = (menuBtn) => {
   mobileMenu.classList.toggle('opened');
   menuBtn.classList.toggle('close-btn');
   // mobileMenu.classList.contains('opened') ? mobileMenu.style.height = '500px' : mobileMenu.style.height = '0px';
+}
+
+
+const createDomElement = (tagName, className, parentElem, contentElem) => {
+  const element = document.createElement(tagName);
+  element.setAttribute('class', className);
+  parentElem.append(element);
+  if (contentElem) element.innerHTML = contentElem;
+
+  return element;
+}
+
+export const getShopProducts = () => {
+  const shopSublist = document.querySelector('.shop__sublist');
+  let shopCategoryName = window.location.hash.substring(1) ? window.location.hash.substring(1) : "fresh-flowers";
+  console.log(shopCategoryName);
+  window.location.hash = shopCategoryName;
+  let shopCategoryList = shopProducts[shopCategoryName];
+  
+  if (!shopCategoryList) {
+    shopCategoryList = shopProducts["fresh-flowers"];
+    window.location.hash = "fresh-flowers";
+  }
+
+  shopCategoryList.forEach((item) => {
+    const itemTitle = item.title;
+    const itemPrice = `Price: ${item.price}$`;
+    const itemLink = `./shop-item.html#${item.link}`;
+    const shopItem = createDomElement('li', 'shop__subitem', shopSublist);
+    const shopItemLink = createDomElement('a', 'shop__subitem--link', shopItem, itemTitle);
+    shopItemLink.setAttribute('href', itemLink)
+    shopItemLink.style.backgroundImage = `url('../images/${item.image}')`;
+    const shopItemInfo = createDomElement('div', 'shop__subitem--info', shopItem);
+    createDomElement('h5', 'shop__subtitle', shopItemInfo, itemTitle);
+    createDomElement('p', 'shop__price', shopItemInfo, itemPrice);
+  })
+}
+
+
+export const getShopContent = (event) => {
+  const shopSublist = document.querySelector('.shop__sublist');
+  const shopItemActive = document.querySelector('.shop__item--active');
+  const shopItem = event.target.closest('.shop__item');
+
+  if (shopItem === shopItemActive) {
+    return
+  } else {
+    shopItemActive.classList.toggle('shop__item--active');
+    shopItem.classList.toggle('shop__item--active');
+  }
+  window.location.hash = shopItem.dataset.shopitem;
+  shopSublist.innerHTML = '';
+  getShopProducts();
 }

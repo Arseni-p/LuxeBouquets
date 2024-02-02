@@ -1,11 +1,16 @@
 'use strict';
-import * as fn from "./functions/functions.js"
+import * as fn from "./functions/functions.js";
 
-let reviewsListWrapper = document.querySelector('.reviews__list--wrapper');
-// if (!reviewsListWrapper) reviewsListWrapper = fn.getReviewsListWrapper();
+let count = 0;
 
-document.addEventListener('DOMContentLoaded', () => {
-  fn.createReviewsDrops(reviewsListWrapper);
+document.addEventListener('DOMContentLoaded', (event) => {
+  let reviewsListWrapper = document.querySelector('.reviews__list--wrapper');
+  if (reviewsListWrapper) fn.createReviewsDrops(reviewsListWrapper);
+
+  if (document.querySelector(".shop__sublist")) {
+    window.location.hash = '';
+    fn.getShopProducts();
+  }
 });
 
 document.addEventListener('click', (event) => {
@@ -16,22 +21,27 @@ document.addEventListener('click', (event) => {
     event.target.classList.contains('info__wrapper') ||
     btn && btn.classList.contains('info__btn--disable')) fn.getInfo(reviewsListWrapper);
 
-    if (menuBtn) fn.getMobileMenu(menuBtn);
-})
+  if (menuBtn) fn.getMobileMenu(menuBtn);
 
-let count = 0;
-reviewsListWrapper.addEventListener('click', (event) => {
-  count = fn.getReviewsCount(reviewsListWrapper, event, count);
   if (
     event.target.classList.contains('arrow-right') ||
     event.target.classList.contains('arrow-left') ||
     event.target.classList.contains('reviews__dots--item')
     ) {
-      fn.reviewsSlide(reviewsListWrapper, event, count);
+    let reviewsListWrapper = document.querySelector('.reviews__list--wrapper');
+    count = fn.getReviewsCount(reviewsListWrapper, event, count);
+    fn.reviewsSlide(reviewsListWrapper, event, count);
   }
+  
+  if (event.target.closest('.shop__item')) fn.getShopContent(event);
 })
+
+// reviewsListWrapper.addEventListener('click', (event) => {
+  
+// })
 
 window.addEventListener('resize', () => {
   count = 0;
-  fn.resizeWindow(reviewsListWrapper, count);
+  let reviewsListWrapper = document.querySelector('.reviews__list--wrapper');
+  if (reviewsListWrapper) fn.resizeWindow(reviewsListWrapper, count);
 })

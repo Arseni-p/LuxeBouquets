@@ -210,14 +210,6 @@ $paddingForHeroPreviewSection: 1.1vw;
   }
 }
 
-@media screen and (max-width: 1280px) {
-  // $sectionPadding: 2.5vw;
-
-  // .hero__preview {
-  //   grid-template-columns: calc(25vw - $sectionPadding) 1fr;
-  // }
-}
-
 @media screen and (max-width: 768px) {
   .hero__content {
     padding-top: 0;

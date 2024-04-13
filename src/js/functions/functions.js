@@ -1,5 +1,7 @@
 'use strict';
 
+import {shopProducts} from "../modules/modules.js"
+
 const getReviewsVars = (reviewsListWrapper) => {
   const reviewsListContent = reviewsListWrapper.querySelector('.reviews__list--content');
   const reviewsList = reviewsListContent.querySelector('.reviews__list');
@@ -22,7 +24,8 @@ const getReviewsVars = (reviewsListWrapper) => {
 
 export const getReviewsListWrapper = () => document.querySelector('.reviews__list--wrapper');
 
-export const createReviewsDrops = (reviewsListWrapper) => {
+export const createReviewsDrops = () => {
+  const reviewsListWrapper = document.querySelector('.reviews__list--wrapper');
   const { reviewsDotsList, reviewsItems } = getReviewsVars(reviewsListWrapper);
   const reviewsCount = reviewsItems.length;
   for (let i = 0; i < reviewsCount; i++) {
@@ -48,19 +51,36 @@ export const getReviewByDot = (reviewsListWrapper, event, count) => {
   return count;
 }
 
-export const getReviewsCount = (reviewsListWrapper, event, count) => {
-  const reviewsItems = reviewsListWrapper.querySelectorAll('.reviews__item');
+export const getCount = (event, count) => {
   if (event.target.classList.contains('arrow-right')) count++;
   if (event.target.classList.contains('arrow-left')) count--;
-  if (event.target.classList.contains('reviews__dots--item')) count = getReviewByDot(reviewsListWrapper, event, count);
-  if (count >= reviewsItems.length) count = 0;
-  if (count < 0) count = reviewsItems.length - 1;
-  toggleActiveDot(reviewsListWrapper, count);
+
+  if (document.querySelector('.reviews__list--wrapper')) {
+    const reviewsListWrapper = document.querySelector('.reviews__list--wrapper');
+    const reviewsItems = reviewsListWrapper.querySelectorAll('.reviews__item');
+    if (event.target.classList.contains('reviews__dots--item')) count = getReviewByDot(reviewsListWrapper, event, count);
+    if (count >= reviewsItems.length) count = 0;
+    if (count < 0) count = reviewsItems.length - 1;
+    toggleActiveDot(reviewsListWrapper, count);
+  }
 
   return count;
 }
 
-export const reviewsSlide = (reviewsListWrapper, event, count) => {
+export const getProductsItemCount = (event, count) => {
+  const subListContent = document.querySelector('.shop-item__sublist--content');
+  const subList = document.querySelector('.shop-item__sublist');
+  const subLIstWidth = subList.offsetLeft + subList.offsetWidth;
+  const sunblistContentWidth = subListContent.offsetWidth;
+
+  if (event.target.classList.contains('arrow-right') && count < 0) count++;
+  if (event.target.classList.contains('arrow-left') && subLIstWidth > sunblistContentWidth) count--;
+
+  return count;
+}
+
+export const reviewsSlide = (event, count) => {
+  const reviewsListWrapper = document.querySelector('.reviews__list--wrapper');
   let { reviewsList, reviewsListContentWidth, posX } = getReviewsVars(reviewsListWrapper);
   
   posX = count * reviewsListContentWidth;
@@ -73,11 +93,26 @@ export const reviewsSlide = (reviewsListWrapper, event, count) => {
   toggleActiveDot(reviewsListWrapper, count);
 }
 
-export const resizeWindow = (reviewsListWrapper, count) => {
-  let { reviewsList, posX } = getReviewsVars(reviewsListWrapper);
-  posX = 0;
-  reviewsList.style.transform = `translateX(${posX}px)`;
-  toggleActiveDot(reviewsListWrapper, count);
+// export const resizeWindow = (reviewsListWrapper, count) => {
+//   let { reviewsList, posX } = getReviewsVars(reviewsListWrapper);
+//   posX = 0;
+//   reviewsList.style.transform = `translateX(${posX}px)`;
+//   toggleActiveDot(reviewsListWrapper, count);
+// }
+
+export const resizeWindow = (count) => {
+  if (document.querySelector('.reviews__list--wrapper')) {
+    const reviewsListWrapper = document.querySelector('.reviews__list--wrapper');
+    let { reviewsList, posX } = getReviewsVars(reviewsListWrapper);
+    reviewsList.style.transform = `translateX(${count}px)`;
+    toggleActiveDot(reviewsListWrapper, count);
+  }
+
+  if (document.querySelector('.shop-item__sublist--wrapper')) {
+    const subList = document.querySelector('.shop-item__sublist');
+    getSublistHeight();
+    subList.style.left = `${count}px`
+  }
 }
 
 export const getInfo = () => {
@@ -86,10 +121,156 @@ export const getInfo = () => {
 }
 
 export const getMobileMenu = (menuBtn) => {
-  
   const mobileMenu = document.querySelector('.mobile-menu__list');
-  // console.log(menuBtn);
   mobileMenu.classList.toggle('opened');
   menuBtn.classList.toggle('close-btn');
-  // mobileMenu.classList.contains('opened') ? mobileMenu.style.height = '500px' : mobileMenu.style.height = '0px';
+}
+
+
+const createDomElement = (tagName, className, parentElem, contentElem) => {
+  const element = document.createElement(tagName);
+  element.setAttribute('class', className);
+  parentElem.append(element);
+  if (contentElem) element.innerHTML = contentElem;
+
+  return element;
+}
+
+const getSublistHeight = () => {
+  const subLIstContent = document.querySelector('.shop-item__sublist--content');
+  const subList = subLIstContent.querySelector('.shop-item__sublist');
+  const subListHeight = subList.offsetHeight;
+  subLIstContent.style.height = `${subListHeight}px`;
+}
+
+export const getShopProducts = (shopProducts) => {
+  const shopSublist = document.querySelector('.shop__sublist');
+  let shopCategoryName = window.location.hash.substring(1);
+
+  if (!shopProducts[shopCategoryName]) shopCategoryName = "fresh-flowers";
+  const shopCategoryList = shopProducts[shopCategoryName];
+  window.location.hash = shopCategoryName;
+
+  if (!document.querySelector('.shop__item--active')) document.querySelector(`.shop__item[data-shopitem="${shopCategoryName}"]`).classList.add('shop__item--active');
+
+  shopCategoryList.forEach((item) => {
+    const itemTitle = item.title;
+    const itemPrice = `Price: ${item.price}$`;
+    const itemLink = `./shop-item.html#${item.link}`;
+    const shopItem = createDomElement('li', 'shop__subitem', shopSublist);
+    const shopItemLink = createDomElement('a', 'shop__subitem--link', shopItem, itemTitle);
+    shopItemLink.setAttribute('href', itemLink)
+    shopItemLink.style.backgroundImage = `url('../images/${item.image}')`;
+    const shopItemInfo = createDomElement('div', 'shop__subitem--info', shopItem);
+    createDomElement('h5', 'shop__subtitle', shopItemInfo, itemTitle);
+    createDomElement('p', 'shop__price', shopItemInfo, itemPrice);
+  })
+  if (document.querySelector('.shop-item__sublist--content')) getSublistHeight();
+}
+
+
+export const getShopContent = (event) => {
+  const shopSublist = document.querySelector('.shop__sublist');
+  const shopItemActive = document.querySelector('.shop__item--active');
+  const shopItem = event.target.closest('.shop__item');
+
+  if (shopItem === shopItemActive) {
+    return
+  } else {
+    shopItemActive.classList.toggle('shop__item--active');
+    shopItem.classList.toggle('shop__item--active');
+  }
+  window.location.hash = shopItem.dataset.shopitem;
+  shopSublist.innerHTML = '';
+  getShopProducts(shopProducts);
+}
+
+const getShopItemSublist = (shopItemSublist, productTitle) => {
+  shopItemSublist = shopItemSublist;
+  console.log(shopItemSublist, productTitle.textContent);
+  const shopItemSubList = document.querySelector('.shop-item__sublist');
+  shopItemSubList.innerHTML = '';
+  shopItemSublist.forEach((item, index) => {
+    if (item.title !== productTitle.outerText) {
+      const shopSubitem = createDomElement('li', 'shop-item__subitem', shopItemSubList);
+      const shopSubitemImage = createDomElement('a', 'shop-item__sublink', shopSubitem);
+      shopSubitemImage.style.backgroundImage = `url('../../images/${item.image}')`;
+      shopSubitemImage.setAttribute('href', `./shop-item.html#${item.link}`);
+      const shopSubitemSubtitile = createDomElement('h5', 'shop-item__subtitle', shopSubitem, item.title);
+      const shopSubitemSubprice = createDomElement('p', 'shop-item__subprice', shopSubitem, `$${item.price}`);
+    }
+  })
+  if (document.querySelector('.shop-item__sublist--content')) getSublistHeight();
+}
+
+const getAdditionalItems = (currentItem) => {
+  const additionalLinks = document.querySelectorAll('.additional__link');
+  const additionalTitles = document.querySelectorAll('.additional__title');
+  let itemIndex = 0;
+  for (let key in shopProducts) {
+    if (currentItem !== key) {
+      additionalLinks[itemIndex].style.backgroundImage = `url("../../images/shop-${key}.png")`;
+      additionalLinks[itemIndex].setAttribute('href', `./shop.html#${key}`)
+      additionalTitles[itemIndex].textContent = key.replace('-', ' ');
+      itemIndex++;
+    }
+  }
+}
+
+export const getShopItemContent = (shopProducts) => {
+  const productImage = document.querySelector('.shop-item__image');
+  const productSubtitle = document.querySelector('.shop-item__current');
+  const productTitle  = document.querySelector('.shop-item__title');
+  const productText = document.querySelector('.shop-item__text');
+  const shopItemLink = document.querySelector('.shop-item__link');
+  const productPrice  = document.querySelector('.shop-item__price');
+
+  let productLink = window.location.hash.substring(1);
+  let productInfo = {};
+  let productType = '';
+  let productTypeIndex = '';
+  let currentItem = '';
+  for (let key in shopProducts) {
+    productInfo = shopProducts[key].find((item) => item.link === productLink);
+    
+    if (productInfo) {
+      productTypeIndex = key;
+      productType = key.replace('-', ' ');
+      break;
+    }
+  }
+
+  if (!productInfo) {
+    throw Error('No product info')
+  }
+
+  productImage.style.backgroundImage = `url('../images/${productInfo.image}')`;
+  productSubtitle.textContent = productInfo.title;
+  productTitle.textContent = productInfo.title;
+  productText.textContent = productInfo.text;
+  shopItemLink.textContent = productType.toUpperCase();
+  let shopItemLinkHref = shopItemLink.getAttribute('href');
+  shopItemLink.setAttribute('href', `${shopItemLinkHref}#${productTypeIndex}`);
+  productPrice.textContent = productInfo.price;
+  getShopItemSublist(shopProducts[productTypeIndex], productTitle);
+  getAdditionalItems(productTypeIndex);
+}
+
+export const getQuantityCount = (event) => {
+  const quantityField = document.querySelector('.shop-item__count');
+  let quantityCount = parseInt(quantityField.textContent);
+  if (event.target.classList.contains('shop-item__btn--decr') && quantityCount !== 0) quantityCount--;
+  if (event.target.classList.contains('shop-item__btn--incr')) quantityCount++;
+  quantityField.textContent = quantityCount;
+}
+
+export const scrollOtherProducts = (event, count) => {
+  let posX;
+  const subList = document.querySelector('.shop-item__sublist');
+  const subItem = document.querySelector('.shop-item__subitem');
+  const subItemStyles = window.getComputedStyle(subItem);
+  const subItemMarginRight = parseFloat(subItemStyles.marginRight);
+  let subItemWidth = subItem.offsetWidth + subItemMarginRight - 1;
+  posX = subItemWidth*count;
+  subList.style.left = `${posX}px`;
 }

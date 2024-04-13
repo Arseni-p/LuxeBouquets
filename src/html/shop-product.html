@@ -1,0 +1,23 @@
+<section class="section__wrapper shop-item__wrapper">
+  <div class="section__content shop-item__content section__under-nav">
+    <div class="shop-item__part shop-item__image section__part">
+    </div>
+    <div class="shop-item__part shop-item__info section__part">
+      <p class="shop-item__link--wrapper">
+        <a href="./shop.html" class="shop-item__link">Previous page</a> / <span class="shop-item__current">Product title</span>
+      </p>
+      <h3 class="shop-item__title--wrapper"><span class="shop-item__title">Product title</span> - $<span class="shop-item__price">Product price</span></h3>
+      <p class="shop-item__text">Product text</p>
+      <div class="shop-item__quantity--wrapper">
+        <p class="shop-item__quantity">Quantity</p>
+        <div class="shop-item__count--wrapper">
+          <button class="btn shop-item__btn shop-item__btn--decr count__part">-</button>
+          <p class="shop-item__count count__part">0</p>
+          <button class="btn shop-item__btn shop-item__btn--incr count__part">+</button>
+        </div>
+      </div>
+      @@include('./shop-additional.html', {})
+      @@include('./shop-options.html', {})
+    </div>
+  </div>
+</section>

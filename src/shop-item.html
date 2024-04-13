@@ -11,9 +11,11 @@
   @@include('./html/pages-header.html', {})
   <main>
     <h1 class="page-title visually-hidden">Shop page</h1>
-    @@include('./html/shop-item.html')
+    @@include('./html/shop-product.html', {})
+    @@include('./html/shop-promo.html', {})
   </main>
   @@include('./html/footer.html',{})
+  @@include('./html/infoPopup.html', {})
   <script src="js/index.min.js"></script>
 </body>
 <body>

@@ -6,7 +6,7 @@
 .shop__content {
   display: grid;
   grid-template-columns: 1fr 50vw;
-  padding: $navHeight 0 0 0;
+  // padding: $navHeight 0 0 0;
 }
 
 .shop__part {
@@ -127,8 +127,8 @@
     background-image: url('../images/shop-live-plants.png');
   }
   
-  &--aroma-candels {
-    background-image: url('../images/shop-aroma-candels.png');
+  &--aroma-candles {
+    background-image: url('../images/shop-aroma-candles.png');
   }
   
   &--fresheners {
@@ -202,10 +202,11 @@
 @media screen and (max-width: 768px) {
   .shop__content {
     grid-template-columns: 1fr;
-    padding-top: 53px;
   }
   
   .shop__list {
+    display: flex;
+    flex-direction: column;
     height: auto;
     border-bottom: $black;
   }

@@ -1,0 +1,140 @@
+.aboutus__content {
+  flex-direction: column;
+}
+
+.aboutus__parts--wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: $borderBlack;
+}
+
+.aboutus__part,
+.aboutus__founder,
+.aboutus__content--shoplink {
+  padding: 5vw;
+}
+
+.aboutus__part:first-child {
+  border-right: $borderBlack;
+}
+
+.aboutus__img {
+  height: 50vw;
+  background: center center no-repeat;
+  background-size: cover;
+}
+
+.aboutus__story {
+  text-align: center;
+  
+  &.aboutus__part {
+    border-right: none;
+  }
+
+  & + .aboutus__img {
+    border-left: $borderBlack;
+    background-image: url('../images/aboutus-story.png');
+  }
+}
+
+.aboutus__title,
+.aboutus__text {
+  line-height: 1.5;
+  margin-bottom: 3vw;
+}
+
+.aboutus__social {
+  & .contacts__social--list {
+    margin: 0 auto;
+    width: fit-content;
+
+    & .contacts__social--item {
+      width: 3vw;
+    }
+  }
+}
+
+.aboutus__founder {
+  text-align: center;
+
+  & .aboutus__text {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+
+.aboutus__item {
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:nth-child(even) {
+    & .aboutus__part:first-child {
+      border: none;
+    }
+
+    & .aboutus__img {
+      position: relative;
+      &::before {
+        content: '';
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        left: -1px;
+        top: 0;
+        background-color: $black;
+      }
+    }
+  }
+}
+
+.aboutus {
+  &__img1 {
+    background-image: url('../images/aboutus-img1.png');
+  }
+
+  &__img2 {
+    background-image: url('../images/aboutus-img2.png');
+  }
+
+  &__img3 {
+    background-image: url('../images/aboutus-img3.png');
+  }
+}
+
+.aboutus__content--shoplink {
+  text-align: center;
+  border-bottom: $borderBlack;
+
+  & .aboutus__title {
+    margin-bottom: 1vw;
+  }
+
+  & .aboutus__text,
+  & .aboutus__shoplink {
+    margin: 0 auto;
+  }
+
+  & .aboutus__text {
+    width: 50%;
+    margin-bottom: 3vw;
+  }
+}
+
+
+@media screen and (max-width: 1280px) {
+  
+}
+
+@media (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 768px) {
+  
+}
+
+@media screen and (max-width: 525px) {
+
+}

@@ -63,7 +63,6 @@
   }
 }
 
-
 .aboutus__item {
   &:last-child {
     border-bottom: none;
@@ -86,6 +85,10 @@
         background-color: $black;
       }
     }
+  }
+
+  & .aboutus__text {
+    margin: 0;
   }
 }
 
@@ -123,18 +126,48 @@
 }
 
 
-@media screen and (max-width: 1280px) {
-  
-}
-
-@media (max-width: 1024px) {
-
-}
-
 @media screen and (max-width: 768px) {
-  
-}
+  .aboutus__parts--wrapper {
+    grid-template-columns: 1fr;
+  }
 
-@media screen and (max-width: 525px) {
+  .aboutus__story {
+    border-bottom: $borderBlack;
+  }
 
+  .aboutus__story  + .aboutus__img {
+    border-left: none;
+  }
+
+  .aboutus__title,
+  .aboutus__text {
+    line-height: 1.3;
+  }
+
+  .aboutus__social {
+    border: none;
+    height: auto;
+  }
+
+  .aboutus__item {
+    & .aboutus__img {
+      border: none;
+      border-bottom: $borderBlack;
+
+      &::before {
+        display: none;
+      }
+    }
+
+
+    &:nth-child(even) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .aboutus__content--shoplink .aboutus__text {
+    width: 80%;
+    margin-bottom: 3vw;
+  }
 }

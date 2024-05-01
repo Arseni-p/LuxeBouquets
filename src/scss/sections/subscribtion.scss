@@ -1,0 +1,61 @@
+.subscribtion .section__wrapper {
+  border-bottom: $borderBlack;
+} 
+
+.flower-subscribe__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.flower-subscribe__img {
+  border-right: $borderBlack;
+  height: 50vw;
+  background: url('../../images/subscriptions-flower.png') no-repeat top center;
+  background-size: cover;
+}
+
+.flower-subscribe__story {
+  padding: 5vw;
+}
+
+.flower-subscribe__item {
+  margin-bottom: 2vw;
+
+  & ul {
+    list-style-type: disc;
+    padding-left: 2vw;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.flower-subscribe__title {
+  margin-bottom: 2.5vw;
+}
+
+.flower-subscribe__text {
+  position: relative;
+  text-align: justify;
+}
+
+
+@media screen and (max-width: 768px) {
+  .flower-subscribe__content {
+    grid-template-columns: 1fr;
+  }
+
+  .flower-subscribe__img {
+    border-right: none;
+    border-bottom: $borderBlack;
+  }
+
+  .flower-subscribe__title {
+    margin-bottom: 2vw;
+  }
+
+  .flower-subscribe__item-title {
+    margin-bottom: 1vw;
+  }
+}

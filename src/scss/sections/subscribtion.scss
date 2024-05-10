@@ -1,20 +1,28 @@
-.subscribtion .section__wrapper {
+.subscription .section__wrapper:last-child,
+.how-subscribe__item:not(:last-child) {
   border-bottom: $borderBlack;
 } 
 
-.flower-subscribe__content {
+.flower-subscribe__content,
+.how-subscribe__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
+.flower-subscribe__story,
+.how-subscribe__list--wrapper {
+  border-left: $borderBlack;
+}
+
 .flower-subscribe__img {
-  border-right: $borderBlack;
   height: 50vw;
   background: url('../../images/subscriptions-flower.png') no-repeat top center;
   background-size: cover;
 }
 
-.flower-subscribe__story {
+.flower-subscribe__story,
+.how-subscribe__title--wrapper,
+.how-subscribe__item {
   padding: 5vw;
 }
 
@@ -42,20 +50,29 @@
 
 
 @media screen and (max-width: 768px) {
-  .flower-subscribe__content {
+  .flower-subscribe__content,
+  .how-subscribe__content {
     grid-template-columns: 1fr;
   }
 
-  .flower-subscribe__img {
-    border-right: none;
-    border-bottom: $borderBlack;
+  .flower-subscribe__story,
+  .how-subscribe__list--wrapper {
+    border-left: none;
   }
 
-  .flower-subscribe__title {
+  .subscribe__title {
     margin-bottom: 2vw;
   }
 
-  .flower-subscribe__item-title {
+  .subscribe__item-title {
     margin-bottom: 1vw;
+  }
+
+  .how-subscribe__title--wrapper {
+    border-bottom: $borderBlack;
+  }
+
+  .how-subscribe__title {
+    margin-bottom: 0;
   }
 }

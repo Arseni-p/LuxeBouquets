@@ -57,6 +57,12 @@ document.addEventListener('click', (event) => {
     count = fn.getProductsItemCount(event, count);
     fn.scrollOtherProducts(event, count);
   }
+
+  if (event.target.closest('.plan-item__select')) fn.getPlanItem(event);
+
+  if (event.target.closest('.plan-item__count')) fn.getDeliveryCount(event);
+
+  if (event.target.closest('.faq__item')) fn.getActiveFaqItem(event);
 })
 
 window.addEventListener('resize', () => {

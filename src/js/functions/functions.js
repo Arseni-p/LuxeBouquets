@@ -274,3 +274,28 @@ export const scrollOtherProducts = (event, count) => {
   posX = subItemWidth*count;
   subList.style.left = `${posX}px`;
 }
+
+export const getPlanItem = (event) => {
+  const planItem = event.target.closest('.plan-subscribe__item');
+  const planItemContent = planItem.querySelector('.plan-item__content--wrapper');
+  const planItemContentSelected = document.querySelector('.selected');
+  if (!planItemContentSelected) planItemContent.classList.add('selected')
+  if (planItemContentSelected && !planItemContent.classList.contains('selected')) {
+    planItemContentSelected.classList.remove('selected');
+    planItemContent.classList.add('selected');
+  }
+}
+
+export const getDeliveryCount = (event) => {
+  const countBtn = event.target.closest('.plan-item__count');
+  const deliveryCountValue = document.querySelector('.plan-subscribe__count');
+  let deliveryCountNumber = +(deliveryCountValue.textContent)
+  if (countBtn.dataset.countType === "decrease" && deliveryCountNumber >= 1 && deliveryCountNumber < 10) deliveryCountNumber++;
+  if (countBtn.dataset.countType === "increase" && deliveryCountNumber > 1) deliveryCountNumber--;
+  deliveryCountValue.textContent = deliveryCountNumber;
+}
+
+export const getActiveFaqItem = (event) => {
+  const faqItem = event.target.closest(".faq__item ");
+  faqItem.classList.toggle("faq__active")
+}

@@ -246,21 +246,18 @@
   margin-bottom: 2vw;
   height: 0;
   overflow: hidden;
+  text-align: justify;
+  transition: height 0.3s ease-in-out;
 }
 
 .faq__item.faq__active {
-  & .faq__subtitle {
-    margin-bottom: 0.85vw;
-  }
-
   & .faq__icon {
     transform: rotate(90deg);
     transition: transform 0.2s ease-in-out;
   }
 
   .faq__text {
-    height: auto;
-    text-align: justify;
+    transition: height 0.3s ease-in-out;
   }
 }
 

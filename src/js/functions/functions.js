@@ -1,6 +1,15 @@
 'use strict';
 
-import {shopProducts} from "../modules/modules.js"
+import {shopProducts} from "../modules/modules.js";
+
+const createDomElement = (tagName, className, parentElem, contentElem) => {
+  const element = document.createElement(tagName);
+  element.setAttribute('class', className);
+  parentElem.append(element);
+  if (contentElem) element.innerHTML = contentElem;
+
+  return element;
+}
 
 const getReviewsVars = (reviewsListWrapper) => {
   const reviewsListContent = reviewsListWrapper.querySelector('.reviews__list--content');
@@ -93,13 +102,6 @@ export const reviewsSlide = (event, count) => {
   toggleActiveDot(reviewsListWrapper, count);
 }
 
-// export const resizeWindow = (reviewsListWrapper, count) => {
-//   let { reviewsList, posX } = getReviewsVars(reviewsListWrapper);
-//   posX = 0;
-//   reviewsList.style.transform = `translateX(${posX}px)`;
-//   toggleActiveDot(reviewsListWrapper, count);
-// }
-
 export const resizeWindow = (count) => {
   if (document.querySelector('.reviews__list--wrapper')) {
     const reviewsListWrapper = document.querySelector('.reviews__list--wrapper');
@@ -120,21 +122,13 @@ export const getInfo = () => {
   infoPopup.classList.toggle('info__wrapper--disable');
 }
 
-export const getMobileMenu = (menuBtn) => {
+export const getMobileMenu = () => {
+  const menuBtn = document.querySelector('.mobile-menu__open');
   const mobileMenu = document.querySelector('.mobile-menu__list');
   mobileMenu.classList.toggle('opened');
   menuBtn.classList.toggle('close-btn');
 }
 
-
-const createDomElement = (tagName, className, parentElem, contentElem) => {
-  const element = document.createElement(tagName);
-  element.setAttribute('class', className);
-  parentElem.append(element);
-  if (contentElem) element.innerHTML = contentElem;
-
-  return element;
-}
 
 const getSublistHeight = () => {
   const subLIstContent = document.querySelector('.shop-item__sublist--content');
@@ -168,11 +162,16 @@ export const getShopProducts = (shopProducts) => {
   if (document.querySelector('.shop-item__sublist--content')) getSublistHeight();
 }
 
+const getActiveShopItem = (event) => {
+  const shopItemData = event.target.closest('.shop__item--footer').dataset.shopitem;
+  const shopItems = Array.from(document.querySelectorAll('.shop__item'));
+  return shopItems.find(item => item.dataset.shopitem == shopItemData);
+}
 
 export const getShopContent = (event) => {
   const shopSublist = document.querySelector('.shop__sublist');
   const shopItemActive = document.querySelector('.shop__item--active');
-  const shopItem = event.target.closest('.shop__item');
+  let shopItem = event.target.closest('.shop__item') ? event.target.closest('.shop__item') : getActiveShopItem(event);
 
   if (shopItem === shopItemActive) {
     return
@@ -187,7 +186,6 @@ export const getShopContent = (event) => {
 
 const getShopItemSublist = (shopItemSublist, productTitle) => {
   shopItemSublist = shopItemSublist;
-  console.log(shopItemSublist, productTitle.textContent);
   const shopItemSubList = document.querySelector('.shop-item__sublist');
   shopItemSubList.innerHTML = '';
   shopItemSublist.forEach((item, index) => {
@@ -218,6 +216,8 @@ const getAdditionalItems = (currentItem) => {
 }
 
 export const getShopItemContent = (shopProducts) => {
+  
+  console.log('hasg')
   const productImage = document.querySelector('.shop-item__image');
   const productSubtitle = document.querySelector('.shop-item__current');
   const productTitle  = document.querySelector('.shop-item__title');
@@ -297,5 +297,9 @@ export const getDeliveryCount = (event) => {
 
 export const getActiveFaqItem = (event) => {
   const faqItem = event.target.closest(".faq__item ");
-  faqItem.classList.toggle("faq__active")
+  faqItem.classList.toggle("faq__active");
+  const faqText = faqItem.querySelector(".faq__text");
+  let faqTextHeight = faqItem.querySelector(".faq__text--content").offsetHeight;
+  faqItem.classList.contains('faq__active') ? faqTextHeight : faqTextHeight = 0;
+  faqText.style.height = `${faqTextHeight}px`
 }

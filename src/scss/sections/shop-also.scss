@@ -1,13 +1,13 @@
 .additional__wrapper,
 .additional__preview {
   border-bottom: $borderBlack;
-  // border-right: none;
+  border-right: none;
 }
 
 .additional__preview {
   text-align: center;
   padding: 3vw 0;
-  // border-right: $borderBlack;
+  border-right: $borderBlack;
 }
 
 .additional__list {
@@ -58,6 +58,14 @@
 
 
 @media screen and (max-width: 768px) {
+  .additional__wrapper,
+  .additional__preview {
+    border-right: $borderBlack;
+}
+
+.additional__preview {
+  border-right: none;
+}
   .additional__preview--title {
     margin: 0;
   }

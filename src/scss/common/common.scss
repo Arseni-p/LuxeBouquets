@@ -103,6 +103,10 @@ input {
   height: $inputHeight;
   padding: 0.5vw;
   border: 1px solid $grayLight;
+
+  &::placeholder {
+    font-size: inherit
+  }
 }
 
 a,

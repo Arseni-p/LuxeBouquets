@@ -19,7 +19,8 @@ document.addEventListener('click', (event) => {
     btn && btn.classList.contains('popup__enable') || 
     event.target.classList.contains('info__wrapper') ||
     btn && btn.classList.contains('info__btn--disable') ||
-    event.target.classList.contains('menu__cart')) {console.log('asd'); fn.getInfo();}
+    event.target.classList.contains('menu__cart') ||
+    btn && btn.classList.contains('signin__submit')) {console.log('asd'); fn.getInfo();}
 
   if (
     event.target.closest('.mobile-menu__open') ||
@@ -49,6 +50,9 @@ document.addEventListener('click', (event) => {
   if (event.target.closest('.plan-item__count')) fn.getDeliveryCount(event);
 
   if (event.target.closest('.faq__item')) fn.getActiveFaqItem(event);
+
+  if (event.target.closest('.signin__popup') ||
+  event.target.closest('.signin__wrapper--active')) fn.getSigninPopup(event);
 })
 
 window.addEventListener('resize', () => {

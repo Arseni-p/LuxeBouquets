@@ -119,6 +119,7 @@ export const resizeWindow = (count) => {
 
 export const getInfo = () => {
   const infoPopup = document.querySelector('.info__wrapper');
+  console.log(infoPopup)
   infoPopup.classList.toggle('info__wrapper--disable');
 }
 
@@ -302,4 +303,11 @@ export const getActiveFaqItem = (event) => {
   let faqTextHeight = faqItem.querySelector(".faq__text--content").offsetHeight;
   faqItem.classList.contains('faq__active') ? faqTextHeight : faqTextHeight = 0;
   faqText.style.height = `${faqTextHeight}px`
+}
+
+export const getSigninPopup = (event) => {
+  const signinWrapper = document.querySelector('.signin__wrapper');
+  const signinContent = document.querySelector('.signin__content');
+  if (!signinContent.contains(event.target)) signinWrapper.classList.toggle('signin__wrapper--active')
+  console.log(signinWrapper);
 }

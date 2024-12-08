@@ -6,8 +6,6 @@ $paddingForHeroPreviewSection: 1.1vw;
 }
 
 .hero__part {
-  // width: 50vw;
-
   &--left {
     padding-top: 0;
     height: fit-content;
@@ -15,8 +13,6 @@ $paddingForHeroPreviewSection: 1.1vw;
 
   &--right {
     padding: 0;
-    // width: 50vw;
-    // border-left: $borderBlack;
   }
 }
 
@@ -229,7 +225,6 @@ $paddingForHeroPreviewSection: 1.1vw;
 
   .hero__preview {
     grid-template-rows: 37vw;
-    // border: 1px dashed red;
   }
 
   .hero__image--wrapper {

@@ -20,6 +20,15 @@
   height: 50vw;
 }
 
+.tel-warning {
+  color: $statusError;
+  display: none;
+
+  &.err-warning {
+    display: inline-block;
+  }
+}
+
 .contacts__links--wrapper {
   display: grid;
   grid-template-columns: 25vw 1fr;

@@ -1,5 +1,6 @@
 'use strict';
 
+import { Value } from "sass";
 import {shopProducts} from "../modules/modules.js";
 
 const createDomElement = (tagName, className, parentElem, contentElem) => {
@@ -79,16 +80,19 @@ export const getCount = (event, count) => {
 export const getProductsItemCount = (event, count) => {
   const subListContent = document.querySelector('.shop-item__sublist--content');
   const subList = document.querySelector('.shop-item__sublist');
-  const subLIstWidth = subList.offsetLeft + subList.offsetWidth;
-  const sunblistContentWidth = subListContent.offsetWidth;
+  const subListWidth = subList.offsetLeft + subList.offsetWidth;
+  const subListContentWidth = subListContent.offsetWidth;
 
-  if (event.target.classList.contains('arrow-right') && count < 0) count++;
-  if (event.target.classList.contains('arrow-left') && subLIstWidth > sunblistContentWidth) count--;
+  console.log(count, subListWidth, subListContentWidth);
+  if (event.target.classList.contains('arrow-left') && count < 0) count++;
+  if (event.target.classList.contains('arrow-right') && subListWidth > subListContentWidth) count--;
 
   return count;
 }
 
 export const reviewsSlide = (event, count) => {
+  console.log('qwerty')
+
   const reviewsListWrapper = document.querySelector('.reviews__list--wrapper');
   let { reviewsList, reviewsListContentWidth, posX } = getReviewsVars(reviewsListWrapper);
   
@@ -117,9 +121,9 @@ export const resizeWindow = (count) => {
   }
 }
 
-export const getInfo = () => {
+export const getInfo = (event) => {
+  event.preventDefault();
   const infoPopup = document.querySelector('.info__wrapper');
-  console.log(infoPopup)
   infoPopup.classList.toggle('info__wrapper--disable');
 }
 
@@ -217,8 +221,6 @@ const getAdditionalItems = (currentItem) => {
 }
 
 export const getShopItemContent = (shopProducts) => {
-  
-  console.log('hasg')
   const productImage = document.querySelector('.shop-item__image');
   const productSubtitle = document.querySelector('.shop-item__current');
   const productTitle  = document.querySelector('.shop-item__title');
@@ -308,6 +310,32 @@ export const getActiveFaqItem = (event) => {
 export const getSigninPopup = (event) => {
   const signinWrapper = document.querySelector('.signin__wrapper');
   const signinContent = document.querySelector('.signin__content');
-  if (!signinContent.contains(event.target)) signinWrapper.classList.toggle('signin__wrapper--active')
-  console.log(signinWrapper);
+  if (!signinContent.contains(event.target)) signinWrapper.classList.toggle('signin__wrapper--active');
+}
+
+export const phoneValidation = (event, contactsForm) => {
+  
+  const telWarning = document.querySelector('.tel-warning');
+  const telInput = contactsForm.querySelector('#tel-input');
+  const phonePattern = /^\+\d{10,14}$/;
+  const existingWarning = contactsForm.querySelector('.err-warning');
+  const isPhoneValid = phonePattern.test(telInput.value);
+
+  if (isPhoneValid && existingWarning) existingWarning.classList.remove('err-warning');
+
+  if (!isPhoneValid) {
+    event.preventDefault();
+    if (telWarning && !existingWarning) telWarning.classList.add('err-warning');
+  }
+}
+
+
+export const getInputPlus = () => {
+  const inputElement = document.getElementById('tel-input');
+  document.getElementById('tel-input').addEventListener('input', function(event) {
+    let input = event.target;
+    let value = input.value[0] == '+' ? input.value : `+${input.value}`;
+    
+    input.value = value;
+  });
 }

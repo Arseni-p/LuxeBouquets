@@ -124,7 +124,12 @@ export const resizeWindow = (count) => {
 export const getInfo = (event) => {
   event.preventDefault();
   const infoPopup = document.querySelector('.info__wrapper');
-  infoPopup.classList.toggle('info__wrapper--disable');
+  const infoPopupIsDisable = document.querySelector('.info__wrapper--disable');
+  if (
+    infoPopupIsDisable || 
+    event.target === infoPopup ||
+    event.target.closest('.info__btn--disable')
+  ) infoPopup.classList.toggle('info__wrapper--disable');
 }
 
 export const getMobileMenu = () => {

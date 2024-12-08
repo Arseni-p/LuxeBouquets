@@ -6,7 +6,6 @@
 .shop__content {
   display: grid;
   grid-template-columns: 1fr 50vw;
-  // padding: $navHeight 0 0 0;
 }
 
 .shop__part {
@@ -138,10 +137,7 @@
   border-right: $borderBlack;
   border-bottom: $borderBlack;
   overflow: hidden;
-
-  // background: url('../images/cart-item-ff-1.png') no-repeat center;
   
-
   &:nth-child(2n),
   &:nth-last-child(2):nth-child(even) {
     border-right: none;
@@ -225,8 +221,6 @@
     text-align: center;
     border-right: $borderBlack;
     border-bottom: $borderBlack;
-  
-    // background: url('../images/cart-item-ff-1.png') no-repeat center;
     background: no-repeat center;
     background-size: cover;
   

@@ -188,6 +188,13 @@
   .shop__content {
     grid-template-columns: 1fr;
   }
+
+  .shop__part--preview,
+  .shop__part--products {
+    &.section__part {
+      padding: 0;
+    }
+  }
   
   .shop__list {
     display: flex;

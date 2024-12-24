@@ -16,7 +16,7 @@
 
 .flower-subscribe__img {
   height: 50vw;
-  background: url('../../images/subscriptions-flower.png') no-repeat top center;
+  background: url('../images/subscriptions-flower.png') no-repeat top center;
   background-size: cover;
 }
 
@@ -113,15 +113,15 @@
   background-size: cover;
 
   &.bouquet-1 {
-    background-image: url('../../images/plan-item-bouquet-1.png');
+    background-image: url('../images/plan-item-bouquet-1.png');
   }
 
   &.bouquet-2 {
-    background-image: url('../../images/plan-item-bouquet-2.png');
+    background-image: url('../images/plan-item-bouquet-2.png');
   }
 
   &.bouquet-3 {
-    background-image: url('../../images/plan-item-bouquet-3.png');
+    background-image: url('../images/plan-item-bouquet-3.png');
   }
 }
 
@@ -143,7 +143,7 @@
 }
 
 .plan-subscribe__img {
-  background: url('../../images/subscriptions.png') no-repeat center center;
+  background: url('../images/subscriptions.png') no-repeat center center;
   background-size: cover;
   border-bottom: $borderBlack;
 }

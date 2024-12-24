@@ -13,7 +13,8 @@ const btnClasses = [
 const eventTargetClasses = [
   'info__wrapper',
   'menu__cart',
-  'sublist__wrapper'
+  'sublist__wrapper',
+  'mobile-menu__shop'
 ];
 
 window.addEventListener('DOMContentLoaded', () => {

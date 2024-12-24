@@ -2,7 +2,7 @@ import webpack from "webpack-stream";
 import { catchErrors } from "./errors.js";
 
 export const js = () => {
-  return app.gulp.src(app.path.src.js, {     sourcemaps: app.isDev })
+  return app.gulp.src(app.path.src.js, { sourcemaps: app.isDev })
   .pipe(catchErrors("JS"))
   .pipe(webpack({
     mode: app.isBuild ? 'production' : 'development',

@@ -83,7 +83,6 @@ export const getProductsItemCount = (event, count) => {
   const subListWidth = subList.offsetLeft + subList.offsetWidth;
   const subListContentWidth = subListContent.offsetWidth;
 
-  console.log(count, subListWidth, subListContentWidth);
   if (event.target.classList.contains('arrow-left') && count < 0) count++;
   if (event.target.classList.contains('arrow-right') && subListWidth > subListContentWidth) count--;
 
@@ -91,8 +90,6 @@ export const getProductsItemCount = (event, count) => {
 }
 
 export const reviewsSlide = (event, count) => {
-  console.log('qwerty')
-
   const reviewsListWrapper = document.querySelector('.reviews__list--wrapper');
   let { reviewsList, reviewsListContentWidth, posX } = getReviewsVars(reviewsListWrapper);
   
@@ -124,7 +121,12 @@ export const resizeWindow = (count) => {
 export const getInfo = (event) => {
   event.preventDefault();
   const infoPopup = document.querySelector('.info__wrapper');
-  infoPopup.classList.toggle('info__wrapper--disable');
+  const infoPopupIsDisable = document.querySelector('.info__wrapper--disable');
+  if (
+    infoPopupIsDisable || 
+    event.target === infoPopup ||
+    event.target.closest('.info__btn--disable')
+  ) infoPopup.classList.toggle('info__wrapper--disable');
 }
 
 export const getMobileMenu = () => {
@@ -159,7 +161,7 @@ export const getShopProducts = (shopProducts) => {
     const shopItem = createDomElement('li', 'shop__subitem', shopSublist);
     const shopItemLink = createDomElement('a', 'shop__subitem--link', shopItem, itemTitle);
     shopItemLink.setAttribute('href', itemLink)
-    shopItemLink.style.backgroundImage = `url('../images/${item.image}')`;
+    shopItemLink.style.backgroundImage = `url('./images/${item.image}')`;
     const shopItemInfo = createDomElement('div', 'shop__subitem--info', shopItem);
     createDomElement('h5', 'shop__subtitle', shopItemInfo, itemTitle);
     createDomElement('p', 'shop__price', shopItemInfo, itemPrice);
@@ -197,7 +199,7 @@ const getShopItemSublist = (shopItemSublist, productTitle) => {
     if (item.title !== productTitle.outerText) {
       const shopSubitem = createDomElement('li', 'shop-item__subitem', shopItemSubList);
       const shopSubitemImage = createDomElement('a', 'shop-item__sublink', shopSubitem);
-      shopSubitemImage.style.backgroundImage = `url('../../images/${item.image}')`;
+      shopSubitemImage.style.backgroundImage = `url('./images/${item.image}')`;
       shopSubitemImage.setAttribute('href', `./shop-item.html#${item.link}`);
       const shopSubitemSubtitile = createDomElement('h5', 'shop-item__subtitle', shopSubitem, item.title);
       const shopSubitemSubprice = createDomElement('p', 'shop-item__subprice', shopSubitem, `$${item.price}`);
@@ -212,7 +214,7 @@ const getAdditionalItems = (currentItem) => {
   let itemIndex = 0;
   for (let key in shopProducts) {
     if (currentItem !== key) {
-      additionalLinks[itemIndex].style.backgroundImage = `url("../../images/shop-${key}.png")`;
+      additionalLinks[itemIndex].style.backgroundImage = `url("./images/shop-${key}.png")`;
       additionalLinks[itemIndex].setAttribute('href', `./shop.html#${key}`)
       additionalTitles[itemIndex].textContent = key.replace('-', ' ');
       itemIndex++;
@@ -247,7 +249,7 @@ export const getShopItemContent = (shopProducts) => {
     throw Error('No product info')
   }
 
-  productImage.style.backgroundImage = `url('../images/${productInfo.image}')`;
+  productImage.style.backgroundImage = `url('./images/${productInfo.image}')`;
   productSubtitle.textContent = productInfo.title;
   productTitle.textContent = productInfo.title;
   productText.textContent = productInfo.text;

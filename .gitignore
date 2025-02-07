@@ -4,7 +4,6 @@
 *.log
 *.sublime
 *.zip
-root/
 build/
 gulp/version.json
 node_modules/

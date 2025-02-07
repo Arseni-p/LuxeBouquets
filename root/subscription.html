@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LB Subscription</title>
+    <link rel="stylesheet" href="css/style.min.css?_v=20250207224651">
+</head>
+<body class="body">
+  <header class="header section__wrapper">
+  <section class="header__content section__content">
+    <nav class="menu__wrapper">
+      <ul class="menu__list">
+        <li class="menu__item">
+          <a href="./index.html" class="menu__link main-link">
+            <span class="link__text link__text--hidden">Home</span>
+            <span class="link__text link__text--active">Home</span>
+            <span class="link__text link__text--hover">Home</span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#contacts" class="menu__link">
+            <span class="link__text link__text--hidden">Contacts</span>
+            <span class="link__text link__text--active">Contacts</span>
+            <span class="link__text link__text--hover">Contacts</span>
+          </a>
+        </li>
+        <li class="menu__item menu__item--to-right signin__popup">
+          <a href="#" class="menu__link">
+            <span class="link__text link__text--hidden">Sign in</span>
+            <span class="link__text link__text--active">Sign in</span>
+            <span class="link__text link__text--hover">Sign in</span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__link menu__cart">
+            <span class="link__text link__text--hidden">Cart</span>
+            <span class="link__text link__text--active">Cart</span>
+            <span class="link__text link__text--hover">Cart</span>
+          </a>
+        </li>
+      </ul>
+      <div class="mobile-menu__wrapper">
+        <div class="mobile-menu__control">
+          <span class="mobile-menu__control--section mobile-menu__open"></span>
+          <span class="mobile-menu__control--section mobile-menu__shop">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.3 21.5C5.8 21.5 5.375 21.325 5.025 20.975C4.675 20.625 4.5 20.2 4.5 19.7V8.3C4.5 7.8 4.675 7.375 5.025 7.025C5.375 6.675 5.8 6.5 6.3 6.5H8.25V6.25C8.25 5.21667 8.61667 4.33333 9.35 3.6C10.0833 2.86667 10.9667 2.5 12 2.5C13.0333 2.5 13.9167 2.86667 14.65 3.6C15.3833 4.33333 15.75 5.21667 15.75 6.25V6.5H17.7C18.2 6.5 18.625 6.675 18.975 7.025C19.325 7.375 19.5 7.8 19.5 8.3V19.7C19.5 20.2 19.325 20.625 18.975 20.975C18.625 21.325 18.2 21.5 17.7 21.5H6.3ZM6.3 20H17.7C17.7667 20 17.8333 19.9667 17.9 19.9C17.9667 19.8333 18 19.7667 18 19.7V8.3C18 8.23333 17.9667 8.16667 17.9 8.1C17.8333 8.03333 17.7667 8 17.7 8H15.75V10.25C15.75 10.4667 15.6793 10.6457 15.538 10.787C15.396 10.929 15.2167 11 15 11C14.7833 11 14.6043 10.929 14.463 10.787C14.321 10.6457 14.25 10.4667 14.25 10.25V8H9.75V10.25C9.75 10.4667 9.67933 10.6457 9.538 10.787C9.396 10.929 9.21667 11 9 11C8.78333 11 8.60433 10.929 8.463 10.787C8.321 10.6457 8.25 10.4667 8.25 10.25V8H6.3C6.23333 8 6.16667 8.03333 6.1 8.1C6.03333 8.16667 6 8.23333 6 8.3V19.7C6 19.7667 6.03333 19.8333 6.1 19.9C6.16667 19.9667 6.23333 20 6.3 20ZM9.75 6.5H14.25V6.25C14.25 5.61667 14.0333 5.08333 13.6 4.65C13.1667 4.21667 12.6333 4 12 4C11.3667 4 10.8333 4.21667 10.4 4.65C9.96667 5.08333 9.75 5.61667 9.75 6.25V6.5ZM6 20V8V20Z" fill="#121212"/>
+            </svg>
+          </span>
+        </div>
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a href="./index.html" class="mobile-menu__link">Home</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="./shop.html#fresh-flowers" class="mobile-menu__link">Shop</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="./subscription.html" class="mobile-menu__link">Service</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="./about-us.html" class="mobile-menu__link">About us</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#contacts" class="mobile-menu__link mobile-menu__contacts">Contacts</a>
+          </li>
+          <li class="mobile-menu__item signin__popup">
+            <a href="#" class="mobile-menu__link">Sign in</a>
+          </li>
+          <li class="mobile-menu__item sublist__wrapper">
+            <ul class="mobile-menu__sublist">
+              <li class="mobile-menu__subitem">
+                <a href="#" class="mobile-menu__sublink">Shipping & returns</a>
+              </li>
+              <li class="mobile-menu__subitem">
+                <a href="#" class="mobile-menu__sublink">Terms & conditions</a>
+              </li>
+              <li class="mobile-menu__subitem">
+                <a href="#" class="mobile-menu__sublink">Privacy policy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="mobile-menu__item">
+            <ul class="contacts__social--list">
+  <li class="contacts__social--item">
+    <a href="https://facebook.com" target="_blank" class="contacts__social--link instagram">
+      <img src="./images/icon-facebook.svg" alt="facebook">
+    </a>
+  </li>
+  <li class="contacts__social--item">
+    <a href="https://instagram.com" target="_blank" class="contacts__social--link instagram">
+      <img src="./images/icon-instagram.svg" alt="instagram">
+    </a>
+  </li>
+  <li class="contacts__social--item">
+    <a href="https://pinterest.com/" target="_blank" class="contacts__social--link instagram">
+      <img src="./images/icon-pinterest.svg" alt="pinterest">
+    </a>
+  </li>
+  <li class="contacts__social--item">
+    <a href="https://web.telegram.org" target="_blank" class="contacts__social--link instagram">
+      <img src="./images/icon-telegram.svg" alt="telegram">
+    </a>
+  </li>
+  <li class="contacts__social--item">
+    <a href="https://twitter.com" target="_blank" class="contacts__social--link twitterx">
+      <img src="./images/icon-twitterx.svg" alt="twitterx">
+    </a>
+  </li>
+</ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+</header>
+  <main class="subscription">
+    <h1 class="page-title visually-hidden">Subscription</h1>
+    <section class="section__wrapper flower-subscribe__wrapper">
+  <div class="section__content subscribe__content section__under-nav">
+    <div class="flower-subscribe__part flower-subscribe__img"></div>
+    <div class="flower-subscribe__part flower-subscribe__story">
+      <div class="flower-subscribe__content sticky__section">
+        <h2 class="flower-subscribe__title subscribe__title">Flower subscription</h2>
+        <div class="flower-subscribe__list--wrapper">
+          <ul class="flower-subscribe__list">
+            <li class="flower-subscribe__item">
+              <h3 class="flower-subscribe__item-title subscribe__item-title">For yourself</h3>
+              <ul class="flower-subscribe__sublist">
+                <li class="flower-subscribe__subitem">
+                  <p class="flower-subscribe__text">The perfect way to keep your home fresh and beautiful. Get a regular delivery of stunning bouquets straight to your doorstep without lifting a finger. Enjoy the beauty and fragrance of fresh flowers hassle-free!</p>
+                </li>
+              </ul>
+            </li>
+            <li class="flower-subscribe__item">
+              <h3 class="flower-subscribe__item-title subscribe__item-title">As a Gift</h3>
+              <ul class="flower-subscribe__sublist">
+                <li class="flower-subscribe__subitem">
+                  <p class="flower-subscribe__text">Simply provide us with their address and let us take care of the rest, delivering beautiful blooms straight to their doorstep at the frequency and duration of your choosing.</p>
+                </li>
+              </ul>
+            </li>
+            <li class="flower-subscribe__item">
+              <h3 class="flower-subscribe__item-title subscribe__item-title">For Business</h3>
+              <ul class="flower-subscribe__sublist">
+                <li class="flower-subscribe__subitem">
+                  <p class="flower-subscribe__text">Is a great way to create a pleasant atmosphere and leave a good impression on your guests and customers. Fresh floral arrangements will improve the aesthetic image of your business, and our service guarantees timely replacement without extra care or effort on your part.</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="section__wrapper how-subscribe__wrapper">
+  <div class="section__content subscribe__content">
+    <div class="how-subscribe__part how-subscribe__title--wrapper sticky__section">
+      <h2 class="how-subscribe__title">How does it work?</h2>
+    </div>
+    <div class="how-subscribe__part how-subscribe__list--wrapper">
+      <ul class="how-subscribe__list">
+        <li class="how-subscribe__item">
+          <h3 class="how-subscribe__item-title subscribe__item-title">Choose a plan</h3>
+          <p class="how-subscribe__text">Select the subscription plan that suits you best from our three bouquet designs: classic, seasonal, and deluxe. Each plan comes with a designer vase, free delivery, and a discount of up to 30%. Our seasonal and deluxe plans also include a luxurious scented candle to enhance the ambiance.</p>
+        </li>
+        <li class="how-subscribe__item">
+          <h3 class="how-subscribe__item-title subscribe__item-title">Frequency and Duration</h3>
+          <p class="how-subscribe__text">Choose delivery frequency: once a week, every two weeks, or once a month. Then, select your subscription duration from 3 to 12 months. Enjoy savings with a longer subscription. We understand that every customer has different needs, and we aim to provide flexible subscription options that cater to your specific preferences.</p>
+        </li>
+        <li class="how-subscribe__item">
+          <h3 class="how-subscribe__item-title subscribe__item-title">Pay once</h3>
+          <p class="flower-subscribe__text">After entering your contact and delivery information and paying for your subscription, you can sit back and relax, knowing that you have secured a regular supply of fresh, stunning flowers for yourself or your loved ones</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+    <section class="section__wrapper plan-subscribe__wrapper">
+  <div class="section__content subscribe__content">
+    <div class="plan-subscribe__part plan-subscribe__title--wrapper">
+      <h5 class="plan-subscribe__pretitle">Build your subscription</h5>
+      <h2 class="plan-subscribe__title">Select your plan</h2>
+      <p class="plan-subscribe__text">Enjoy free shipping on every order and save up to 30%. Every bouquet we deliver is carefully curated to ensure it arrives fresh and stunning. To modify, pause, or cancel your subscription, simply log in to your account dashboard. You're in complete control of your flower delivery experience.
+      </p>
+      <div class="plan-subscribe__plan--wrapper plan__list">
+        <ul class="plan-subscribe__list">
+          <li class="plan-subscribe__item">
+            <div class="plan-item__content--wrapper">
+              <div class="plan-item__img bouquet-1"></div>
+              <div class="plan-item__content">
+                <h5 class="plan-item__title">Classic</h5>
+                <ul class="plan-item__sublist">
+                  <li class="plan-item__subitem">Price $45</li>
+                  <li class="plan-item__subitem">Free delivery</li>
+                  <li class="plan-item__subitem">Best for a budget</li>
+                  <li class="plan-item__subitem">Glass vase with first delivery</li>
+                  <li class="plan-item__subitem">Save up to 25%</li>
+                </ul>
+              </div>
+            </div>
+            <button class="btn btn__pri plan-item__btn plan-item__select" type="button">
+              <span class="btn__text">
+  <span class="btn__text--active">Select</span>
+  <span class="btn__text--hover">Select</span>
+</span>
+            </button>
+          </li>
+          <li class="plan-subscribe__item">
+            <div class="plan-item__content--wrapper">
+              <div class="plan-item__img bouquet-2"></div>
+              <div class="plan-item__content">
+                <h5 class="plan-item__title">Seasonal</h5>
+                <ul class="plan-item__sublist">
+                  <li class="plan-item__subitem">Price $65</li>
+                  <li class="plan-item__subitem">Free delivery</li>
+                  <li class="plan-item__subitem">Best Seasonal selections</li>
+                  <li class="plan-item__subitem">Glass vase with first delivery</li>
+                  <li class="plan-item__subitem">Luxury candle with your first delivery</li>
+                  <li class="plan-item__subitem">Save up to 30%</li>
+                </ul>
+              </div>
+            </div>
+            <button class="btn btn__pri plan-item__btn plan-item__select" type="button">
+              <span class="btn__text">
+  <span class="btn__text--active">Select</span>
+  <span class="btn__text--hover">Select</span>
+</span>
+            </button>
+          </li>
+          <li class="plan-subscribe__item">
+            <div class="plan-item__content--wrapper">
+              <div class="plan-item__img bouquet-3"></div>
+              <div class="plan-item__content">
+                <h5 class="plan-item__title">Luxe</h5>
+                <ul class="plan-item__sublist">
+                  <li class="plan-item__subitem">Price $95</li>
+                  <li class="plan-item__subitem">Free delivery</li>
+                  <li class="plan-item__subitem">Premium arrangement</li>
+                  <li class="plan-item__subitem">Premium vase with first delivery</li>
+                  <li class="plan-item__subitem">Luxury candle with your first delivery</li>
+                  <li class="plan-item__subitem">Save up to 35%</li>
+                </ul>
+              </div>
+            </div>
+            <button class="btn btn__pri plan-item__btn plan-item__select" type="button">
+              <span class="btn__text">
+  <span class="btn__text--active">Select</span>
+  <span class="btn__text--hover">Select</span>
+</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="plan-subscribe__plan--wrapper">
+        <h4 class="plan-subscribe__title">How often do you want flowers delivered?</h4>
+        <p class="plan-subscribe__text">Select the delivery frequency</p>
+        <form action="" class="plan-subscribe__howoften">
+          <input class="plan-subscribe__input" type="radio" id="monthly" name="plan" value="monthly">
+          <label class="plan-subscribe__label btn btn__sec" for="monthly">
+            <span class="btn__text">
+  <span class="btn__text--active">Monthly</span>
+  <span class="btn__text--hover">Monthly</span>
+</span>
+          </label>
+          <input class="plan-subscribe__input" type="radio" id="bi-weekly" name="plan" value="bi-weekly">
+          <label class="plan-subscribe__label btn btn__sec" for="bi-weekly">
+            <span class="btn__text">
+  <span class="btn__text--active">Bi-Weekly</span>
+  <span class="btn__text--hover">Bi-Weekly</span>
+</span>
+          </label>
+          <input class="plan-subscribe__input" type="radio" id="weekly" name="plan" value="weekly">
+          <label class="plan-subscribe__label btn btn__sec" for="weekly">
+            <span class="btn__text">
+  <span class="btn__text--active">Weekly</span>
+  <span class="btn__text--hover">Weekly</span>
+</span>
+          </label>
+        </form>
+      </div>
+      <div class="plan-subscribe__plan--wrapper">
+        <h4 class="plan-subscribe__title">How many deliveries would you like?</h4>
+        <p class="plan-subscribe__text">Pay once and do not worry about flowers, our bouquets will be beautiful and on time, as many times as you need </p>
+        <div class="plan-subscribe__count--wrapper">
+          <button class="btn btn__sec plan-item__btn plan-item__count" data-count-type="increase" type="button">
+            <span class="btn__text">
+  <span class="btn__text--active">-</span>
+  <span class="btn__text--hover">-</span>
+</span>
+          </button>
+          <p class="plan-subscribe__count">1</p>
+          <button class="btn btn__sec plan-item__btn plan-item__count" data-count-type="decrease" type="button">
+            <span class="btn__text">
+  <span class="btn__text--active">+</span>
+  <span class="btn__text--hover">+</span>
+</span>
+          </button>
+        </div>
+      </div>
+      <button class="btn btn__pri plan-item__btn plan-item__checkout popup__enable" type="button">
+        <span class="btn__text">
+  <span class="btn__text--active">Checkout</span>
+  <span class="btn__text--hover">Checkout</span>
+</span>
+      </button>
+    </div>
+    <div class="plan-subscribe__part plan-subscribe__img-wrapper">
+      <p class="plan-subscribe__img sticky__section"></p>
+    </div>
+  </div>
+</section>
+    <section class="section__wrapper plan-subscribe__wrapper">
+  <div class="section__content subscribe__content subscribe__faq">
+    <div class="faq__list--wrapper">
+      <h2 class="faq__title">Subscription FAQ</h2>
+      <ul class="faq__list">
+        <li class="faq__item">
+          <h3 class="faq__subtitle">How often will I get a new bouquet?</h3>
+          <p class="faq__icon">
+            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.41 14L0 12.59L10.59 2H4V0H14V10H12V3.41L1.41 14Z" fill="#121212"/>
+            </svg>
+          </p>
+          <p class="faq__text">
+            <span class="faq__text--content">Our subscriptions allow you to select a delivery frequency that best suits your needs - either weekly, bi-weekly, or monthly. You can also choose the number of deliveries for your subscription. Choose any combination that works for you!</span>
+          </p>
+        </li>
+        <li class="faq__item">
+          <h3 class="faq__subtitle">Can I send subscription like as a gift?</h3>
+          <p class="faq__icon">
+            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.41 14L0 12.59L10.59 2H4V0H14V10H12V3.41L1.41 14Z" fill="#121212"/>
+            </svg>
+          </p>
+          <p class="faq__text">
+            <span class="faq__text--content">Depending on the day you first choose for your flower delivery, we will deliver on that day for all future deliveries. So if you get your flowers on Thursday every other week, you will get another flower delivery two weeks later on Thursday.</span>
+          </p>
+        </li>
+        <li class="faq__item">
+          <h3 class="faq__subtitle">Can I choose which bouquet I get?</h3>
+          <p class="faq__icon">
+            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.41 14L0 12.59L10.59 2H4V0H14V10H12V3.41L1.41 14Z" fill="#121212"/>
+            </svg>
+          </p>
+          <p class="faq__text">
+            <span class="faq__text--content">Each subscription option is carefully selected by our specialists. Our florists select the best and freshest varieties for delivery that surprise and delight every time; thus, the current subscription offer does not allow you to choose a different bouquet for each delivery or to receive the entire subscription with one particular bouquet. Each bouquet will be individual and made according to your chosen plan - classic, seasonal or luxury bouquets.</span>
+          </p>
+        </li>
+        <li class="faq__item">
+          <h3 class="faq__subtitle">Can I change the shipping address?</h3>
+          <p class="faq__icon">
+            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.41 14L0 12.59L10.59 2H4V0H14V10H12V3.41L1.41 14Z" fill="#121212"/>
+            </svg>
+          </p>
+          <p class="faq__text">
+            <span class="faq__text--content">Yes, you can! After you create an account, you can log in and adjust your settings to pause the next delivery and let us know the next best delivery date.</span>
+          </p>
+        </li>
+        <li class="faq__item">
+          <h3 class="faq__subtitle">What day will the subscription bouquet come?</h3>
+          <p class="faq__icon">
+            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.41 14L0 12.59L10.59 2H4V0H14V10H12V3.41L1.41 14Z" fill="#121212"/>
+            </svg>
+          </p>
+          <p class="faq__text">
+            <span class="faq__text--content">Depending on the day you first choose for your flower delivery, we will deliver on that day for all future deliveries. So if you get your flowers on Thursday every other week, you will get another flower delivery two weeks later on Thursday.</span>
+          </p>
+        </li>
+        <li class="faq__item">
+          <h3 class="faq__subtitle">Can I suspend my subscription to flowers?</h3>
+          <p class="faq__icon">
+            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.41 14L0 12.59L10.59 2H4V0H14V10H12V3.41L1.41 14Z" fill="#121212"/>
+            </svg>
+          </p>
+          <p class="faq__text">
+            <span class="faq__text--content">Yes, you can! After you create an account, you can log in and adjust your settings to pause the next delivery and let us know the next best delivery date.</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+  </main>
+  <footer class="footer section__wrapper" id="contacts">
+  <section class="footer__content section__content">
+    <div class="footer__list--wrapper">
+      <ul class="footer__list">
+        <li class="footer__item footer__remind">
+          <p class="footer__text remind__text">Remember to offer beautiful flowers from Kyiv LuxeBouquets Valentines Day, Mothers Day, Christmas... Reminds you 7 days before. No spam or sharing your address</p>
+          <div class="remind__form--wrapper">
+            <form action="" class="remind__form">
+              <label for="email-input" class="remind__input-label">
+                <input id="email-input" class="email-input" type="text" placeholder="Your Email">
+              </label>
+              <button type="submit" class="btn btn__pri">
+                <span class="btn__text">
+  <span class="btn__text--active">Remind</span>
+  <span class="btn__text--hover">Remind</span>
+</span>
+              </button>
+            </form>
+          </div>
+        </li>
+        <li class="footer__item footer__contacts">
+          <h5 class="footer__title">Contuct Us</h5>
+          <h6 class="footer__subtitle">Addres</h6>
+          <p class="footer__text"><a href="https://maps.app.goo.gl/jaebRYHEKVATXL52A" class="contacts__link" target="_blank">15/4 Khreshchatyk Street, Kyiv</a></p>
+          <h6 class="footer__subtitle">Phone</h6>
+          <p class="footer__text">
+            <a href="tel:+380980099777" class="contacts__link">+380980099777</a>
+            <a href="tel:+380980099111" class="contacts__link">+380980099111</a>
+          </p>
+          <h6 class="footer__subtitle">General Enquiry:</h6>
+          <p class="footer__text footer__email">Kiev.Florist.Studio@gmail.com</p>
+          <div class="contacts__social--wrapper footer__links">
+            <h5 class="contacts__social--title">Follow Us</h5>
+            <ul class="contacts__social--list">
+  <li class="contacts__social--item">
+    <a href="https://facebook.com" target="_blank" class="contacts__social--link instagram">
+      <img src="./images/icon-facebook.svg" alt="facebook">
+    </a>
+  </li>
+  <li class="contacts__social--item">
+    <a href="https://instagram.com" target="_blank" class="contacts__social--link instagram">
+      <img src="./images/icon-instagram.svg" alt="instagram">
+    </a>
+  </li>
+  <li class="contacts__social--item">
+    <a href="https://pinterest.com/" target="_blank" class="contacts__social--link instagram">
+      <img src="./images/icon-pinterest.svg" alt="pinterest">
+    </a>
+  </li>
+  <li class="contacts__social--item">
+    <a href="https://web.telegram.org" target="_blank" class="contacts__social--link instagram">
+      <img src="./images/icon-telegram.svg" alt="telegram">
+    </a>
+  </li>
+  <li class="contacts__social--item">
+    <a href="https://twitter.com" target="_blank" class="contacts__social--link twitterx">
+      <img src="./images/icon-twitterx.svg" alt="twitterx">
+    </a>
+  </li>
+</ul>
+          </div>
+        </li>
+        <li class="footer__item footer__shop">
+          <div class="footer__item--section">
+            <h5 class="footer__title">Shop</h5>
+            <ul class="footer__sublist">
+              <li class="footer__subitem">
+                <a href="./shop.html" class="footer__link">
+                  <span class="footer__link--active">All Products</span>
+                  <span class="footer__link--hover">All Products</span>
+                </a>
+              </li>
+              <li class="footer__subitem shop__item--footer" data-shopitem="fresh-flowers">
+                <a href="./shop.html#fresh-flowers" class="footer__link">
+                  <span class="footer__link--active">Fresh Flowers</span>
+                  <span class="footer__link--hover">Fresh Flowers</span>
+                </a>
+              </li>
+              <li class="footer__subitem shop__item--footer" data-shopitem="dried-flowers">
+                <a href="./shop.html#dried-flowers" class="footer__link">
+                  <span class="footer__link--active">Dried Flowers</span>
+                  <span class="footer__link--hover">Dried Flowers</span>
+                </a>
+              </li>
+              <li class="footer__subitem shop__item--footer" data-shopitem="live-plants">
+                <a href="./shop.html#live-plants" class="footer__link">
+                  <span class="footer__link--active">Live Plants</span>
+                  <span class="footer__link--hover">Live Plants</span>
+                </a>
+              </li>
+              <li class="footer__subitem shop__item--footer" data-shopitem="aroma-candles">
+                <a href="./shop.html#aroma-candles" class="footer__link">
+                  <span class="footer__link--active">Aroma Candles</span>
+                  <span class="footer__link--hover">Aroma Candles</span>
+                </a>
+              </li>
+              <li class="footer__subitem shop__item--footer" data-shopitem="fresheners">
+                <a href="./shop.html#fresheners" class="footer__link">
+                  <span class="footer__link--active">Freshener Diffuser</span>
+                  <span class="footer__link--hover">Freshener Diffuser</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__item--section">
+            <h5 class="footer__title">Service</h5>
+            <ul class="footer__sublist">
+              <li class="footer__subitem">
+                <a href="./subscription.html" class="footer__link">
+                  <span class="footer__link--active">Flower Subscription</span>
+                  <span class="footer__link--hover">Flower Subscription</span>
+                </a>
+              </li>
+              <li class="footer__subitem">
+                <a href="./subscription.html" class="footer__link">
+                  <span class="footer__link--active">Wedding & Event Decor</span>
+                  <span class="footer__link--hover">Wedding & Event Decor</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="footer__item">
+          <h5 class="footer__title">About Us</h5>
+          <ul class="footer__sublist">
+            <li class="footer__subitem">
+              <a href="./about-us.html" class="footer__link">
+                <span class="footer__link--active">Our story</span>
+                <span class="footer__link--hover">Our story</span>
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="./about-us.html#crafted" class="footer__link">
+                <span class="footer__link--active">Crafted Bouquets</span>
+                <span class="footer__link--hover">Crafted Bouquets</span>
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="./about-us.html#gifts" class="footer__link">
+                <span class="footer__link--active">Gifts</span>
+                <span class="footer__link--hover">Gifts</span>
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="./about-us.html#special" class="footer__link">
+                <span class="footer__link--active">Special days</span>
+                <span class="footer__link--hover">Special days</span>
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="./about-us.html#discover" class="footer__link">
+                <span class="footer__link--active">Discover</span>
+                <span class="footer__link--hover">Discover</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+</footer>
+  <div class="info__wrapper info__wrapper--disable">
+  <div class="info__content">
+    <h2 class="info__title">Welcome!</h2>
+    <p class="info__text info__text--preview">This site was created to demonstrate skills in creation websites with HTML/SCSS/JS & Gulp. Please keep in mind that not all features on this site are fully functional</p>
+    <p class="info__text info__text--subtitle">Here's what is available on the website:</p>
+    <ul class="info__list">
+      <li class="info__item">
+        <p class="info__text">Check the <strong>Homepage</strong> for an overview of the <strong>design and layout</strong>.</p>
+      </li>
+      <li class="info__item">
+        <p class="info__text">Scroll through the homepage to observe the <strong>interactions</strong>.</p>
+      </li>
+      <li class="info__item">
+        <p class="info__text">Evaluate the <strong>typography and hierarchy</strong>.</p>
+      </li>
+      <li class="info__item">
+        <p class="info__text">Check out <strong>the states of buttons and links</strong>.</p>
+      </li>
+      <li class="info__item">
+        <p class="info__text">Explore the textual content throughout the website.</p>
+      </li>
+      <li class="info__item">
+        <p class="info__text">Visit the <strong>Shop</strong> page to see the product listings.</p>
+      </li>
+      <li class="info__item">
+        <p class="info__text">Explore <strong>Service</strong> page for interface and content details.</p>
+      </li>
+      <li class="info__item">
+        <p class="info__text">Go to the <strong>About Us</strong> page</p>
+      </li>
+      <li class="info__item">
+        <p class="info__text">Open the <strong>Flower Subscription</strong> page, explore the building of subscriptions</p>
+      </li>
+    </ul>
+    <button class="btn btn__pri info__btn info__btn--disable">
+      <span class="btn__text">
+  <span class="btn__text--active">Continue To Explore</span>
+  <span class="btn__text--hover">Continue To Explore</span>
+</span>
+    </button>
+  </div>
+</div>
+  <div class="signin__wrapper">
+  <div class="signin__content">
+    <h3 class="signin__title">Greetings! Welcome to luxury gift shop.</h3>
+    <p class="signin__text">Use your mobile number to sign up or log in</p>
+    <form action="" class="signin__form">
+      <input id="signin__login" class="signin__input" type="text" placeholder="+ 380 XX XXX XX XX">
+      <input id="signin__password" class="signin__input" type="password" placeholder="Write your password">
+      <button type="submit" class="btn btn__pri signin__submit">
+        <span class="btn__text">
+  <span class="btn__text--active">Sign in</span>
+  <span class="btn__text--hover">Sign in</span>
+</span>
+      </button>
+    </form>
+  </div>
+</div>
+  <script src="js/index.min.js?_v=20250207224651"></script>
+</body>
+<body>

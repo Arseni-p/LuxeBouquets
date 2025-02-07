@@ -29,11 +29,6 @@
 .flower-subscribe__item {
   margin-bottom: 2vw;
 
-  & ul {
-    list-style-type: disc;
-    padding-left: 2vw;
-  }
-
   &:last-child {
     margin: 0;
   }
@@ -326,8 +321,12 @@
     }
   }
 
-  .plan-item__count {
+  .btn.plan-item__count {
     width: 56px;
+  }
+
+  .btn__subscribe {
+    height: 56px;
   }
 
   .plan-subscribe__count {

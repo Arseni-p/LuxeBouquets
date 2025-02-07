@@ -482,6 +482,17 @@ button,
     }
   }
 
+  .shop__part--preview,
+  .shop__part--products,
+  .hero-services__list-wrapper,
+  .why-services__list-wrapper,
+  .contacts__part--title,
+  .contacts__part--content {
+    &.section__part {
+      padding: 0;
+    }
+  }
+
   .sticky__section {
     position: static;
     top: auto;

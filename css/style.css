@@ -2137,7 +2137,7 @@ button,
   line-height: 1.5;
 }
 
-.plan-item__select {
+.plan-item__select.btn {
   width: 100%;
 }
 
